@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
 
 body {
     background-image: url('/src/main-background/background-img-project.jpg');
@@ -9,11 +11,11 @@ body {
     display: inline-grid;
     width: 20%;
     height: 300px;
-    /* grid-template-columns: 200px 200px 200px; */
+    grid-template-columns: 200px 200px 200px;
     grid-template-columns: repeat(2, 1fr);
     background-color: white;
-    /* margin-top: 350px;
-    margin-left: 800px; */
+    margin-top: 350px;
+    margin-left: 800px;
     background-image: url('/src/cookie-image/cookie-img.png');
 }
 
@@ -55,8 +57,77 @@ body {
 
 .score-board {
     background-image: url('/src/score-board/score-board-img.png');
-    height: 180px;
-    width: 150px;
-    /* margin-left: 330px;
-    margin-bottom: 300px; */
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 200px;
+    left: 1300px;
+    font-family: "Mountains of Christmas", serif;
+    /* margin-left: 300px;
+    margin-bottom: 400px; */
+}
+
+
+#score-board-title {
+    margin-top: 40px;
+    margin-left: 60px;
+    font-size: 1.5em;
+    color: brown;
+}
+
+/*total clicks container and children divs */
+
+.total-clicks-container {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    height: 40px;
+    /* padding-top: 20px; */
+}
+
+#total-clicks-text {
+    /* padding-top: 30px; */
+    /* padding-left: 20px; */
+    font-size: 1.5em;
+    color: #CC231E;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+#total-clicks-count {
+    background-color: #34A65F;
+    width: 50px;
+    height: 60px;
+    font-size: 3em;
+    margin-right: 30px;
+    padding-left: 5px;
+    color:white 
+}
+
+/*total cookies container and children */
+
+.total-cookies-container {
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 20px;
+}
+
+/* #total-cookies-text, #total-cookies-count {
+    display: inline-block;
+} */
+
+#total-cookies-text {
+    font-size: 1.3em;
+    color: #CC231E;;
+    margin-left: 20px;
+}
+
+#total-cookies-count {
+    background-color: #34A65F;
+    width: 50px;
+    height: 60px;
+    font-size: 3em;
+    margin-right: 30px;
+    padding-left: 5px;
+    color:white 
 }
