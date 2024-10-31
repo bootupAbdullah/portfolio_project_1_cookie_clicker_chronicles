@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+  }
+  
 
 body {
     background-image: url('/src/main-background/background-img-project.jpg');
@@ -13,22 +17,25 @@ body {
     height: 300px;
     grid-template-columns: 200px 200px 200px;
     grid-template-columns: repeat(2, 1fr);
-    background-color: white;
     margin-top: 350px;
     margin-left: 800px;
     background-image: url('/src/cookie-image/cookie-img.png');
+    /* background-image:  */
+
 }
 
 .grid-items {
     margin: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font: 1em;
+
 }
 
 #quadrant-1 {
     /* display: flex; */
     padding-left:5px;
     font-size: 1.5em;
+    background-size: cover;
 }
 
 
