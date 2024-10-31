@@ -9,8 +9,8 @@ let quadrant4 = true
 let totalClicks = 0
 
 // List ======================================================
-updateTotalClickText = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
-updateCookiesEatenText = {5: 'Hungry', 10: 'Starving', 20: 'Santa Status'}
+const updateTotalClickText = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
+const updateCookiesEatenText = {5: 'Hungry', 10: 'Starving', 20: 'Santa Status'}
 
 // Functions ======================================================
 
@@ -23,35 +23,38 @@ gridContainerItems.forEach((quadrant) => {
     quadrant.addEventListener('click', (event) => {
         totalClicks += 1
         totalCLicksCount.innerText = totalClicks
-        updateText(totalClicksText, totalClicks)
+        updateClickText(totalClicksText, totalClicks) //added function to update text! para:(text-you-want-to-update, click-count)
     });
     // totalClicks += 1
 });
 
-//creae a funtion the randomizes text selection through for loop
-
-// !! STOPED HERE: Creating function that will iterate over list to display text
-// const randomizeTextSelection = (selectedElementText) => {
-//     for (let i = 0, i )
-// }
-
-
-
-//update 'total clicks count and text as incremented'
-const updateText = (elementToUpdate, count, selectedText) => {
+//update 'total clicks count and text as incremented:
+const updateClickText = (elementToUpdate, count) => {
     if(count === 5) {
         elementToUpdate.innerText = 'Nice!'
         elementToUpdate.style.fontSize = '2.5em'
+        elementToUpdate.style.paddingRight = '70px'
     } else if (count === 15) {
         elementToUpdate.innerText = "Woah!"
+        elementToUpdate.style.paddingRight = '50px'
     } else if (count === 25) {
         elementToUpdate.innerText = "Keep.."
     } else if (count === 28) {
         elementToUpdate.innerText = "..on"
+        elementToUpdate.style.paddingRight = '90px'
     } else if (count === 35) {
         elementToUpdate.innerText = "GOING!"
+        elementToUpdate.style.paddingRight = '45px'
     }
 }
+
+
+// cookies eaten count:
+// const
+
+
+//creae a funtion the randomizes text selection through for loop
+
 
 // Console Outputs ======================================================
 console.log(randomInt(5))
