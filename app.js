@@ -8,6 +8,7 @@ const cookieQuadrant1 = document.querySelector('#quadrant-1');
 const cookieQuadrant2 = document.querySelector('#quadrant-2');
 const cookieQuadrant3 = document.querySelector('#quadrant-3');
 const cookieQuadrant4 = document.querySelector('#quadrant-4');
+const gifContainer1 = document.querySelector('#gif-container')
 let quadrant1 = true
 let quadrant2 = true
 let quadrant3 = true
@@ -22,6 +23,7 @@ console.dir(gridContainerItems)
 console.dir(totalCLicksCount)
 console.dir(cookieQuadrant1)
 console.dir(totalCookiesCount)
+console.dir(gifContainer1)
 
 // List ======================================================
 const updateTotalClickTextList = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
@@ -57,17 +59,22 @@ const updateClickText = (elementToUpdate, count) => {
         elementToUpdate.innerText = 'Nice!'
         elementToUpdate.style.fontSize = '2.5em'
         elementToUpdate.style.paddingRight = '70px'
-    } else if (count === 15) {
+    } else if (count === 10) {
         elementToUpdate.innerText = "Woah!"
         elementToUpdate.style.paddingRight = '50px'
-    } else if (count === 25) {
+    } else if (count === 15) {
         elementToUpdate.innerText = "Keep.."
-    } else if (count === 28) {
+    } else if (count === 20) {
         elementToUpdate.innerText = "..on"
         elementToUpdate.style.paddingRight = '90px'
-    } else if (count === 35) {
+    } else if (count === 25) {
         elementToUpdate.innerText = "GOING!"
         elementToUpdate.style.paddingRight = '45px'
+    } else if (count === 30) {
+        gifContainer1.style.display = 'block';
+        setTimeout(()=>{
+            gifContainer1.style.display = 'none';
+        }, "3500");
     }
 };
 
