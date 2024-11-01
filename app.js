@@ -1,4 +1,5 @@
-//variables===========================================================
+//variables===============================================================================
+const bodyElement = document.querySelector('body')
 const gridContainer = document.querySelector('.grid-container');
 const gridContainerItems = document.querySelectorAll('.grid-items');
 const totalCLicksCount = document.querySelector('#total-clicks-count');
@@ -13,7 +14,10 @@ const negateClickQuadrant1Div = document.querySelector('#negate-click-quadrant-1
 const negateClickQuadrant2Div = document.querySelector('#negate-click-quadrant-2');
 const negateClickQuadrant3Div = document.querySelector('#negate-click-quadrant-3')
 const negateClickQuadrant4Div = document.querySelector('#negate-click-quadrant-4')
-const startGameButton = document.querySelector()
+const gameMenuDisplay = document.querySelector('.game-menu');
+const startGameButton = document.querySelector('#start-button');
+const mainGameLoop = document.querySelector('#game-loop');
+const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
 
 // these 'quadrant' variables are created globaly in an effort to track engagement with clickable event
 let quadrant1 = true
@@ -22,9 +26,9 @@ let quadrant3 = true
 let quadrant4 = true
 let totalClicks = 0
 let totalCookiesEatenCounter = 0
-
-// Console Outputs ======================================================
+// Console Outputs ================================================================================
 // console.log(randomInt(5))
+console.dir(bodyElement)
 console.dir(gridContainer)
 console.dir(gridContainerItems)
 console.dir(totalCLicksCount)
@@ -35,14 +39,16 @@ console.dir(negateClickQuadrant1Div)
 console.dir(negateClickQuadrant2Div)
 console.dir(negateClickQuadrant3Div)
 console.dir(negateClickQuadrant4Div)
+console.dir(gameMenuDisplay)
+console.dir(startGameButton)
+console.dir(holidayCheer)
 
-
-// List ======================================================
+// List ==============================================================================================
 const updateTotalClickTextList = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
 const updateCookiesEatenTextList = {5: 'Hungry', 10: 'Starving', 20: 'Santa Status'}
 const cookieQuadrantList = [cookieQuadrant1, cookieQuadrant2, cookieQuadrant3, cookieQuadrant4]
 
-// Functions ======================================================
+// Functions ==========================================================================================
 
 // create a function to produce a random int
 const randomInt = (max) => {
@@ -100,10 +106,10 @@ const restoreCookieImage = (boolean1, boolean2, boolean3, boolean4) => {
         cookieQuadrant2.style.backgroundImage = "none";
         cookieQuadrant3.style.backgroundImage = "none";
         cookieQuadrant4.style.backgroundImage = "none";
-        negateClickQuadrant1Div.style.display = "none"
-        negateClickQuadrant2Div.style.display = "none"
-        negateClickQuadrant3Div.style.display = "none"
-        negateClickQuadrant4Div.style.display = "none"
+        negateClickQuadrant1Div.style.display = "none";
+        negateClickQuadrant2Div.style.display = "none";
+        negateClickQuadrant3Div.style.display = "none";
+        negateClickQuadrant4Div.style.display = "none";
     }
 }
 
@@ -130,14 +136,14 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
             const clickedQuadrant3 = event.target
             if(clickedQuadrant3 === clickedQuadrant3) {
                 cookieQuadrant3.style.backgroundImage = "url('/src/window-panel-images/quadrant3-window-image.jpg')";
-                negateClickQuadrant2Div.style.display = "block"
+                negateClickQuadrant3Div.style.display = "block"
                 quadrant3 = false
             }
         } else if(cookieQuadrant === cookieQuadrant4) {
             const clickedQuadrant4 = event.target
             if(clickedQuadrant4 === clickedQuadrant4) {
                 cookieQuadrant4.style.backgroundImage = "url('/src/window-panel-images/quadrant4-window-image.jpg')";
-                negateClickQuadrant2Div.style.display = "block"
+                negateClickQuadrant4Div.style.display = "block"
                 quadrant4 = false
             }
         } if (quadrant1 === false && quadrant2 === false && quadrant3 === false && quadrant4 === false) {
@@ -152,46 +158,37 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
     })
 })
 
-
-
-        
-        
-        
-//         if(cookieQuadrant === cookieQuadrant1) {
-//             const clickedQuadrant1 = event.target
-//             if (clickedQuadrant1 = true) {
-//                 cookieQuadrant1.style.backgroundImage = "url('/src/window-panel-images/quadrant1-window-image.jpg')";
-//                 quadrant1 = false;
-//             } else if (cookieQuadrant === cookieQuadrant2) {
-//                 const clickedQuadrant2 = event.target
-//                 if (clickedQuadrant2 = true) {
-//                     cookieQuadrant2.style.backgroundImage = "url('/src/window-panel-images/quadrant2-window-image.jpg')";
-//                     quadrant2 = false;
-//                 } else if (cookieQuadrant === cookieQuadrant3) {
-//                     const clickedQuadrant3 = event.target
-//                     if (clickedQuadrant3 = true) {
-//                         cookieQuadrant3.style.backgroundImage = "url('/src/window-panel-images/quadrant3-window-image.jpg')";
-//                         quadrant3 = false;
-//                     } else if (cookieQuadrant === cookieQuadrant4) {
-//                         const clickedQuadrant4 = event.target
-//                         if(clickedQuadrant4 = true) {
-//                             cookieQuadrant4.style.backgroundImage = "url('/src/window-panel-images/quadrant4-window-image.jpg')";
-//                             quadrant4 = false;
-//                         }
-//                     }
-//                 }
-//             }
-
-
-//         if (quadrant1 === false && quadrant2 === false && quadrant3 === false && quadrant4 === false) {
-//             updateCookiesEatenCounter(totalCookiesCount)
-//             gridContainer.style.display = "none"; 
-//             quadrant1 = true, quadrant2 = true, quadrant3 = true, quadrant4 = true
-//             restoreCookieImage(quadrant1, quadrant2, quadrant3, quadrant4)
-//             setTimeout(()=>{
-//                 gridContainer.style.display = "inline-grid"; 
-//             }, "150");
+// creating a function for Youtube API to play game theme song
+// function onYouTubeIframeAPIReady() {
+//     bellsJingle = new YT.Player('jingle-bell-song', {
+//         videoId: 'R1gskElaLNo',
+//         events: { 'onReady': holidayCheer
 //         }
-//     });
-// });
+//     })
+// }
+// function holidayCheer(event) {
+//     bellsJingle.mute();
+//     bellsJingle.playVideo();
+// }
 
+
+
+// event listeners ==========================================================================================
+
+// clickable event for the 'start game' button, listens for 'click' changes background for body, 
+//changes display for #game-loop and .game-menu
+
+startGameButton.addEventListener('click', (event) => {
+    gameMenuDisplay.style.display = 'none'
+    bodyElement.style.backgroundImage = "url('/src/main-background/background-img-project.jpg')"
+    mainGameLoop.style.display = 'block'
+    });
+
+
+
+window.addEventListener('load', () => {
+    holidayCheer.currentTime = 0;
+    holidayCheer.play();
+});
+// declerations ==========================================================================================
+holidayCheer.loop = true;
