@@ -1,14 +1,19 @@
 //variables===========================================================
-const gridContainer = document.querySelector('.grid-container')
+const gridContainer = document.querySelector('.grid-container');
 const gridContainerItems = document.querySelectorAll('.grid-items');
 const totalCLicksCount = document.querySelector('#total-clicks-count');
 const totalClicksText = document.querySelector('#total-clicks-text');
-const totalCookiesCount = document.querySelector('#total-cookies-count')
+const totalCookiesCount = document.querySelector('#total-cookies-count');
 const cookieQuadrant1 = document.querySelector('#quadrant-1');
 const cookieQuadrant2 = document.querySelector('#quadrant-2');
 const cookieQuadrant3 = document.querySelector('#quadrant-3');
 const cookieQuadrant4 = document.querySelector('#quadrant-4');
-const gifContainer1 = document.querySelector('#gif-container')
+const gifContainer1 = document.querySelector('#gif-container');
+const negateClickQuadrant1Div = document.querySelector('#negate-click-quadrant-1');
+const negateClickQuadrant2Div = document.querySelector('#negate-click-quadrant-2');
+const negateClickQuadrant3Div = document.querySelector('#negate-click-quadrant-3')
+const negateClickQuadrant4Div = document.querySelector('#negate-click-quadrant-4')
+
 // these 'quadrant' variables are created globaly in an effort to track engagement with clickable event
 let quadrant1 = true
 let quadrant2 = true
@@ -25,6 +30,11 @@ console.dir(totalCLicksCount)
 console.dir(cookieQuadrant1)
 console.dir(totalCookiesCount)
 console.dir(gifContainer1)
+console.dir(negateClickQuadrant1Div)
+console.dir(negateClickQuadrant2Div)
+console.dir(negateClickQuadrant3Div)
+console.dir(negateClickQuadrant4Div)
+
 
 // List ======================================================
 const updateTotalClickTextList = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
@@ -89,10 +99,10 @@ const restoreCookieImage = (boolean1, boolean2, boolean3, boolean4) => {
         cookieQuadrant2.style.backgroundImage = "none";
         cookieQuadrant3.style.backgroundImage = "none";
         cookieQuadrant4.style.backgroundImage = "none";
-        // cookieQuadrant1.hidden = 'false';
-        // cookieQuadrant2.hidden = 'false';
-        // cookieQuadrant3.hidden = 'false';
-        // cookieQuadrant4.hidden = 'false';
+        negateClickQuadrant1Div.style.display = "none"
+        negateClickQuadrant2Div.style.display = "none"
+        negateClickQuadrant3Div.style.display = "none"
+        negateClickQuadrant4Div.style.display = "none"
     }
 }
 
@@ -104,29 +114,29 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
         if(cookieQuadrant === cookieQuadrant1) {
             const clickedQuadrant1 = event.target
             if(clickedQuadrant1 === clickedQuadrant1) {
-                console.log(clickedQuadrant1)
                 cookieQuadrant1.style.backgroundImage = "url('/src/window-panel-images/quadrant1-window-image.jpg')";
+                negateClickQuadrant1Div.style.display = "block"
                 quadrant1 = false
             }
         } else if(cookieQuadrant === cookieQuadrant2) {
             const clickedQuadrant2 = event.target
             if(clickedQuadrant2 === clickedQuadrant2) {
-                console.log(clickedQuadrant2)
                 cookieQuadrant2.style.backgroundImage = "url('/src/window-panel-images/quadrant2-window-image.jpg')";
+                negateClickQuadrant2Div.style.display = "block"
                 quadrant2 = false
             }
         } else if(cookieQuadrant === cookieQuadrant3) {
             const clickedQuadrant3 = event.target
             if(clickedQuadrant3 === clickedQuadrant3) {
-                console.log(clickedQuadrant3)
                 cookieQuadrant3.style.backgroundImage = "url('/src/window-panel-images/quadrant3-window-image.jpg')";
+                negateClickQuadrant2Div.style.display = "block"
                 quadrant3 = false
             }
         } else if(cookieQuadrant === cookieQuadrant4) {
             const clickedQuadrant4 = event.target
             if(clickedQuadrant4 === clickedQuadrant4) {
-                console.log(clickedQuadrant4)
                 cookieQuadrant4.style.backgroundImage = "url('/src/window-panel-images/quadrant4-window-image.jpg')";
+                negateClickQuadrant2Div.style.display = "block"
                 quadrant4 = false
             }
         } if (quadrant1 === false && quadrant2 === false && quadrant3 === false && quadrant4 === false) {

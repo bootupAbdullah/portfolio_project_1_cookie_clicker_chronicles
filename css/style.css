@@ -15,7 +15,7 @@ body {
     display: inline-grid;
     width: 20%;
     height: 300px;
-    grid-template-columns: 200px 200px 200px;
+    /* grid-template-columns: 200px 200px 200px; */
     grid-template-columns: repeat(2, 1fr);
     margin-top: 350px;
     margin-left: 800px;
@@ -26,7 +26,7 @@ body {
 
 .grid-items {
     margin: 0;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     font: 1em;
 
 }
@@ -141,7 +141,7 @@ body {
 }
 
 #gif-container {
-    display: block;
+    display: none;
     background-color: white;
     width: 150px;
     height: 150px;
@@ -150,4 +150,48 @@ body {
     left: 280px;
     background-image: url('https://media1.tenor.com/m/IY0FiSVJRKIAAAAd/seriously-disbelief.gif');
     background-size: cover;
+}
+
+#negate-click-quadrant-1 {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 187px;
+    height: 147px;
+    background-color: white;
+    left: 810px;
+    top: 360px;
+}
+
+#negate-click-quadrant-2 {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 187px;
+    height: 147px;
+    background-color: red;
+    right: 732px;
+    top: 360px;
+}
+
+#negate-click-quadrant-3 {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 187px;
+    height: 147px;
+    background-color: blue;
+    left: 810px;
+    bottom: 278px;
+}
+
+#negate-click-quadrant-4 {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 187px;
+    height: 147px;
+    background-color: green;
+    right: 732px;
+    bottom: 278px;
 }
