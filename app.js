@@ -13,6 +13,7 @@ const negateClickQuadrant1Div = document.querySelector('#negate-click-quadrant-1
 const negateClickQuadrant2Div = document.querySelector('#negate-click-quadrant-2');
 const negateClickQuadrant3Div = document.querySelector('#negate-click-quadrant-3')
 const negateClickQuadrant4Div = document.querySelector('#negate-click-quadrant-4')
+const startGameButton = document.querySelector()
 
 // these 'quadrant' variables are created globaly in an effort to track engagement with clickable event
 let quadrant1 = true
