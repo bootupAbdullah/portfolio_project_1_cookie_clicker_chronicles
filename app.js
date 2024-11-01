@@ -37,9 +37,7 @@ const randomInt = (max) => {
     return Math.floor(Math.random() * max)
 }
 
-
-
-//attach click event to cookie grid, updates text and integer
+//attaches click event to cookie grid, updates text and integers for 'total clicks' and click count
 gridContainerItems.forEach((containerItem) => {
     containerItem.addEventListener('click', (event) => {
         if (quadrant1 === true || quadrant2 === true || quadrant3 === true || quadrant4 === true) {
@@ -74,7 +72,7 @@ const updateClickText = (elementToUpdate, count) => {
         gifContainer1.style.display = 'block';
         setTimeout(()=>{
             gifContainer1.style.display = 'none';
-        }, "3500");
+        }, "3150");
     }
 };
 
@@ -84,12 +82,16 @@ const updateCookiesEatenCounter = (elementToUpdate) => {
     elementToUpdate.innerText = totalCookiesEatenCounter
 }
 
-const setImageBack = (boolean1, boolean2, boolean3, boolean4) => {
+const restoreCookieImage = (boolean1, boolean2, boolean3, boolean4) => {
     if (boolean1 === true && boolean2 === true && boolean3 === true && boolean4 === true) {
         cookieQuadrant1.style.backgroundImage = "none";
         cookieQuadrant2.style.backgroundImage = "none";
         cookieQuadrant3.style.backgroundImage = "none";
-        cookieQuadrant4.style.backgroundImage = "none";  
+        cookieQuadrant4.style.backgroundImage = "none";
+        // cookieQuadrant1.hidden = 'false';
+        // cookieQuadrant2.hidden = 'false';
+        // cookieQuadrant3.hidden = 'false';
+        // cookieQuadrant4.hidden = 'false';
     }
 }
 
@@ -100,31 +102,34 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
     cookieQuadrant.addEventListener('click', (event) => {
         if(cookieQuadrant === cookieQuadrant1) {
             cookieQuadrant1.style.backgroundImage = "url('/src/window-panel-images/quadrant1-window-image.jpg')";
+            // cookieQuadrant1.hidden = 'true'
+            // cookieQuadrant1 = false
             quadrant1 = false;
         } else if (cookieQuadrant === cookieQuadrant2) {
             cookieQuadrant2.style.backgroundImage = "url('/src/window-panel-images/quadrant2-window-image.jpg')";
+            // cookieQuadrant2.hidden = 'true'
             quadrant2 = false;
         } else if (cookieQuadrant === cookieQuadrant3) {
             cookieQuadrant3.style.backgroundImage = "url('/src/window-panel-images/quadrant3-window-image.jpg')";
+            // cookieQuadrant3.hidden = 'true'
             quadrant3 = false;
         } else if (cookieQuadrant === cookieQuadrant4) {
             cookieQuadrant4.style.backgroundImage = "url('/src/window-panel-images/quadrant4-window-image.jpg')";
+            // cookieQuadrant4.hidden = 'true'
             quadrant4 = false;
         }
         if (quadrant1 === false && quadrant2 === false && quadrant3 === false && quadrant4 === false) {
             updateCookiesEatenCounter(totalCookiesCount)
+            gridContainer.style.display = "none"; 
             quadrant1 = true, quadrant2 = true, quadrant3 = true, quadrant4 = true
-            setImageBack(quadrant1, quadrant2, quadrant3, quadrant4)
-            // cookieQuadrant1.style.backgroundImage = "none";
-            // !! This works cookieQuadrant1.style.backgroundImage = "url('/src/glass-of-milk/glass-of-milk-img.png')";
+            restoreCookieImage(quadrant1, quadrant2, quadrant3, quadrant4)
+            setTimeout(()=>{
+                gridContainer.style.display = "inline-grid"; 
+            }, "150");
         }
     });
 });
 
-// cookies eaten count:
-// const
-
-//creae a funtion the randomizes text selection through for loop
 
 
 

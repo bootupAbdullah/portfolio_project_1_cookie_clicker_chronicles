@@ -33,6 +33,7 @@ body {
 
 #quadrant-1 {
     /* display: flex; */
+    /* display: none; */
     padding-left:5px;
     font-size: 1.5em;
     background-size: cover;
@@ -142,8 +143,8 @@ body {
 #gif-container {
     display: none;
     background-color: white;
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     position: absolute;
     bottom: 150px;
     left: 280px;
