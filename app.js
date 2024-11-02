@@ -18,6 +18,8 @@ const gameMenuDisplay = document.querySelector('.game-menu');
 const startGameButton = document.querySelector('#start-button');
 const mainGameLoop = document.querySelector('#game-loop');
 const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
+const audioOnButton = document.querySelector('#audio-on-button');
+const audioOffButton = document.querySelector('#audio-off-button');
 
 // these 'quadrant' variables are created globaly in an effort to track engagement with clickable event
 let quadrant1 = true
@@ -42,10 +44,11 @@ console.dir(negateClickQuadrant4Div)
 console.dir(gameMenuDisplay)
 console.dir(startGameButton)
 console.dir(holidayCheer)
+console.dir(audioOnButton)
+console.dir(audioOffButton)
 
 // List ==============================================================================================
 const updateTotalClickTextList = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
-const updateCookiesEatenTextList = {5: 'Hungry', 10: 'Starving', 20: 'Santa Status'}
 const cookieQuadrantList = [cookieQuadrant1, cookieQuadrant2, cookieQuadrant3, cookieQuadrant4]
 
 // Functions ==========================================================================================
@@ -67,9 +70,8 @@ gridContainerItems.forEach((containerItem) => {
     // totalClicks += 1
 });
 
-
 //works to add additonal functionality, does not impede base functionality of clickable event
-//update 'total clicks count and text as incremented:
+//update 'total clicks' count and text as the count is incremented:
 const updateClickText = (elementToUpdate, count) => {
     if(count === 5) {
         elementToUpdate.innerText = 'Nice!'
@@ -158,20 +160,15 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
     })
 })
 
-// creating a function for Youtube API to play game theme song
-// function onYouTubeIframeAPIReady() {
-//     bellsJingle = new YT.Player('jingle-bell-song', {
-//         videoId: 'R1gskElaLNo',
-//         events: { 'onReady': holidayCheer
-//         }
-//     })
-// }
-// function holidayCheer(event) {
-//     bellsJingle.mute();
-//     bellsJingle.playVideo();
-// }
 
-
+const toggleAudio = (clickedButton) => {
+    if(clickedButton === audioOnButton) {
+        holidayCheer.play();
+    } else if (clickedButton === audioOffButton) {
+        holidayCheer.pause();
+        holidayCheer.currentTime = 0;
+    }
+}
 
 // event listeners ==========================================================================================
 
@@ -185,10 +182,9 @@ startGameButton.addEventListener('click', (event) => {
     });
 
 
+audioOnButton.addEventListener('click', () => toggleAudio(audioOnButton));
+audioOffButton.addEventListener('click', () => toggleAudio(audioOffButton));
 
-window.addEventListener('load', () => {
-    holidayCheer.currentTime = 0;
-    holidayCheer.play();
-});
+
 // declerations ==========================================================================================
 holidayCheer.loop = true;
