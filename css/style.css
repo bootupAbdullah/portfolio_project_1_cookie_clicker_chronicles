@@ -4,15 +4,69 @@
     box-sizing: border-box;
   }
 
-
 body {
-    background-image: url('/src/start-menu-imgs/start-menu-background-.jpg');
+    background-image: url('/src/start-menu-imgs/start-menu-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
+.snow-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center bottom;
+    z-index: 1000;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.snow, .snow:after, .snow:before {
+    content: "";
+    position: absolute;
+    top: -650px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent), radial-gradient(3px 3px at 300px 250px, #fff, transparent), radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff, transparent), radial-gradient(3px 3px at 50px 200px, #fff, transparent),radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff, transparent), radial-gradient(3px 3px at 350px 500px, #fff, transparent);
+    background-size: 650px 650px;
+
+    animation: snowAnim 3s linear;
+    animation-iteration-count: infinite;
+
+}
+
+.snow:after {
+    margin-left: -250px;
+    opacity: 0.5;
+    filter: blur(2px);
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+
+.snow:before {
+    margin-left: -350px;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+
+@keyframes snowAnim {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translateY(650px);
+    }
+}
 
 #game-loop{
     display: none;
@@ -21,17 +75,36 @@ body {
 /* game menu ================================================================================ */
 
 .game-menu {
-    display: block;
-    margin-left: 660px;
-    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 600px;
+    margin-top: 40px;
+    margin-right: 50px;
+    /* margin-left: 660px;
+    margin-top: 300px; */
+}
+
+#game-title {
+    position: relative;
+    left: 20px;             
+    top: 35px;            
+    color: white;
+    transform: rotate(-15deg);
+    font-size: 3em;
+    font-family: "Mountains of Christmas", serif;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    margin-bottom: 10px;
 }
 
 /* menu buttons ================================================================================ */
+
 .menu-buttons {
+    width: 600px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    width: 150px;
-    gap: 10px;
+    align-items: center; 
 }
 
 .buttons {
@@ -43,6 +116,7 @@ body {
     box-shadow: 0 2px gold;
     font-family: "Mountains of Christmas", serif;
     font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .buttons:active {
@@ -79,19 +153,27 @@ body {
     justify-content: space-around;
     align-items: flex-end;
     width: 200px;
+
 }
 
 #audio-on-button {
     height: 60px;
     width: 60px;
-    font-size: 1em
+    font-size: 1em;
+    color: white;
+    border: 3px solid gold;
+    background-color:#5a8b6a;
+
 
 }
 
 #audio-off-button {
     height: 60px;
     width: 60px;
-    font-size: 1em
+    font-size: 1em;
+    color: white;
+    border: 3px solid gold;
+    background-color: #f14b59;
 }
 
 
@@ -107,7 +189,8 @@ body {
     margin-top: 350px;
     margin-left: 800px;
     background-image: url('/src/cookie-image/cookie-img.png');
-    /* background-image:  */
+
+
 
 }
 
@@ -115,6 +198,7 @@ body {
     margin: 0;
     /* border: 1px solid black; */
     font: 1em;
+ 
 
 }
 
@@ -171,21 +255,20 @@ body {
     color: brown;
 }
 
-/*total clicks container and children divs */
+/*total clicks container and children divs  ================================================================================ */
 
 .total-clicks-container {
     display: flex;
     justify-content: space-around;
     align-items:center;
     height: 40px;
-    /* padding-top: 20px; */
 }
 
 #total-clicks-text {
     /* padding-top: 30px; */
     /* padding-left: 20px; */
     font-size: 1.5em;
-    color: #CC231E;
+    color: black;
     margin-left: 20px;
     padding-left: 10px;
 }
@@ -200,7 +283,7 @@ body {
     color:white 
 }
 
-/*total cookies container and children */
+/*total cookies container and children ================================================================================ */
 
 .total-cookies-container {
     display: flex;
@@ -208,13 +291,9 @@ body {
     margin-top: 20px;
 }
 
-/* #total-cookies-text, #total-cookies-count {
-    display: inline-block;
-} */
-
 #total-cookies-text {
     font-size: 1.3em;
-    color: #CC231E;;
+    color: black;
     margin-left: 20px;
 }
 
@@ -224,11 +303,12 @@ body {
     height: 60px;
     font-size: 3em;
     margin-right: 30px;
-    padding-left: 5px;
+    padding-left: 10px;
     color:white 
 }
 
 /* gif container  ================================================================================ */
+
 #gif-container {
     display: none;
     background-color: white;
@@ -286,3 +366,122 @@ body {
     left: 1000px;
     bottom: 278px;
 }
+
+/* media queries  ================================================================================ */
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('/src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    main {
+        width: 100vw;             
+        max-width: 100%;           
+        padding: 0;              
+        display: flex;             
+        flex-direction: column;    
+        align-items: center;       
+    }
+
+    section {
+        width: 100px;
+        height: 200px;
+    }
+
+    .game-menu {
+        margin-left: 0px;
+        margin-top: 0x;
+    }
+ 
+    .menu-buttons {
+        width: 100%;               
+        /* max-width: 300px;*/
+        margin: 20px auto;        
+        display: flex;
+        flex-direction: column;   
+        align-items: center;       
+    }
+
+
+    #game-title {
+        color: white;
+        font-size: 1.5em;
+        font-family: "Mountains of Christmas", serif;
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        width: 140%;              
+        margin-left: 30px;           
+        font-size: 1.5em;
+        border: 3px solid gold;            
+    }
+    
+    #audio-on-button, #audio-off-button{
+        border: 3px solid gold;
+        
+    }
+
+}
+
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+
+    
+    body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    
+    .game-menu {
+        margin-right: 300px;
+        margin-top: 700px;
+    }
+
+    main {                          
+        display: flex;             
+        flex-direction: column;    
+        align-items: center;       
+    }
+
+    .menu-buttons {                      
+        display: flex;
+        flex-direction: column;   
+        margin-left: 50px;
+           
+    }
+
+    .buttons {        
+        height: 100px;
+        width: 400px;
+        margin-bottom: 30px;      
+        font-size: 3em;            
+    }
+
+    .audio-control {   
+        margin-right: 10px;
+        width: 400px;
+    }
+    
+    
+    #audio-on-button{
+        height: 100px;
+        width: 100px;
+        font-size: 2em;
+    
+    }
+    
+    #audio-off-button {
+        height: 100px;
+        width: 100px;
+        font-size: 2em;
+    }
+}
+
+
