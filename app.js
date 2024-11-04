@@ -179,6 +179,8 @@ startGameButton.addEventListener('click', (event) => {
     mainGameLoop.style.display = 'block'
     });
 
+
+// These event listener expression were learned much later on in the project: 
 audioOnButton.addEventListener('click', () => toggleAudio(audioOnButton));
 audioOffButton.addEventListener('click', () => toggleAudio(audioOffButton));
 
