@@ -140,8 +140,6 @@ body {
 }
 
 #quadrant-1 {
-    /* display: flex; */
-    /* display: none; */
     padding-left:5px;
     font-size: 1.5em;
     background-size: cover;
@@ -152,10 +150,10 @@ body {
     justify-content: flex-end;
     padding-right: 10px;
     font-size: 1.5em;
+
 }
 
 #quadrant-3 {
-    /* display: flex; */
     padding-left:5px;
     font-size: 1.5em;
 }
@@ -279,7 +277,6 @@ body {
     }
     
     
-    
     main {
         width: 100vw;             
         max-width: 100%;           
@@ -308,7 +305,6 @@ body {
         align-items: center;       
     }
 
-
     #game-title {
         color: white;
         font-size: 1.5em;
@@ -330,7 +326,6 @@ body {
     }
 
 }
-
 
 @media (min-width: 1024px) and (max-width: 1100px) {
 
