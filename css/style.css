@@ -5,7 +5,7 @@
   }
 
 body {
-    background-image: url('/src/start-menu-imgs/start-menu-background.jpg');
+    background-image: url('../src/start-menu-imgs/start-menu-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
@@ -130,12 +130,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 226px;
     margin-left: 800px;
-    background-image: url('/src/cookie-image/cookie-img.png');
+    background-image: url('../src/cookie-image/cookie-img.png');
 }
 
 .grid-items {
     margin: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font: 1em; 
 }
 
@@ -170,7 +170,7 @@ body {
 /* I am attempting to make the base shape of my counter */
 
 .score-board {
-    background-image: url('/src/score-board/score-board-img.png');
+    background-image: url('../src/score-board/score-board-img.png');
     height: 300px;
     width: 300px;
     position: absolute;
@@ -259,7 +259,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-image: url('/src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
+        background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -273,7 +273,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
         margin-top: 268px;
         margin-left: 800px;
-        background-image: url('/src/start-menu-imgs/background-image-project-smaller-viewport.jpg');
+        background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg');
     }
     
     
