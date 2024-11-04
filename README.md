@@ -20,7 +20,74 @@
 
 ### In this game, elves are developing a revolutionary cookie dough called "SantaSynth," designed to interact with Santa's unique genetics. This cookie dough magically disappears when eaten, providing all the joy of snacking without any calories or unhealthy side effects. Players click on cookies to 'eat' them, helping the elves test and perfect SantaSynth. Once enough cookies are consumed, confirming the dough's safety, the elves plan to replace the world's cookie supply. This ensures that when Santa eats cookies made from this dough, they won't affect his health.
 
+<br />
 
+## <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> HOW TO PLAY:
+
+#### The initial game screen shows a picture of a cookie and a score board to the right as depicted in the image provided:
+
+<details>
+<img src= './src/readme-img/initial-display.png' width='800px' height='550px' style='margin-right: 15px'/>
+</details>
+
+#### 1. You click on the 'Cookie'.
+#### 2. The Scoreboard keeps track of 'Total Clicks' and 'Cookies Eaten'
+#### 3. One rotation of the cookie (all four quadrants being clicked) incirments 'Total Cookies Eaten Counter' by 1.
+#### The goal is to eat as many cookies as you can in the time alloted.
+
+
+## <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> HOW IT WORKS:
+
+#### The Cookie is broken up in to four quadrants using CSS Grid:
+
+<details>
+
+<img src= './src/readme-img/cookie-quadrant-display.png' width='450px' height='350px' style='margin-right: 15px'/>
+
+    .grid-container{
+    display: inline-grid;
+    width: 20%;
+    height: 300px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 268px;
+    margin-left: 800px;
+    background-image: url('/src/cookie-image/cookie-img.png');
+    }
+
+    .grid-items {
+    margin: 0;
+    border: 1px solid black;
+    font: 1em; 
+    }
+
+    #quadrant-1 {
+    padding-left:5px;
+    font-size: 1.5em;
+    background-size: cover;
+    }
+
+    #quadrant-2 {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 1.5em;
+
+    }
+
+    #quadrant-3 {
+    padding-left:5px;
+    font-size: 1.5em;
+    }
+
+    #quadrant-4  {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 1.5em;
+    }
+
+#### * The 'flex' display in quadrant 2 and 4 is there primarily to make the numbers visible during this display.
+</details>
 
 
 
