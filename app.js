@@ -121,28 +121,28 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
         if(cookieQuadrant === cookieQuadrant1) {
             const clickedQuadrant1 = event.target
             if(clickedQuadrant1 === clickedQuadrant1) {
-                cookieQuadrant1.style.backgroundImage = "url('src/window-panel-images/quadrant1-window-image.jpg')";
+                cookieQuadrant1.style.backgroundImage = "url('src/window-imgs-folder/quadrant1-window-image.jpg')";
                 cookieQuadrant1.style.pointerEvents = "none";
                 quadrant1 = false
             }
         } else if(cookieQuadrant === cookieQuadrant2) {
             const clickedQuadrant2 = event.target
             if(clickedQuadrant2 === clickedQuadrant2) {
-                cookieQuadrant2.style.backgroundImage = "url('src/window-panel-images/quadrant2-window-image.jpg')";
+                cookieQuadrant2.style.backgroundImage = "url('src/window-imgs-folder/quadrant2-window-image.jpg')";
                 cookieQuadrant2.style.pointerEvents = "none"
                 quadrant2 = false
             }
         } else if(cookieQuadrant === cookieQuadrant3) {
             const clickedQuadrant3 = event.target
             if(clickedQuadrant3 === clickedQuadrant3) {
-                cookieQuadrant3.style.backgroundImage = "url('src/window-panel-images/quadrant3-window-image.jpg')";
+                cookieQuadrant3.style.backgroundImage = "url('src/window-imgs-folder/quadrant3-window-image.jpg')";
                 cookieQuadrant3.style.pointerEvents = "none"
                 quadrant3 = false
             }
         } else if(cookieQuadrant === cookieQuadrant4) {
             const clickedQuadrant4 = event.target
             if(clickedQuadrant4 === clickedQuadrant4) {
-                cookieQuadrant4.style.backgroundImage = "url('src/window-panel-images/quadrant4-window-image.jpg')";
+                cookieQuadrant4.style.backgroundImage = "url('src/window-imgs-folder/quadrant4-window-image.jpg')";
                 cookieQuadrant4.style.pointerEvents = 'none'
                 quadrant4 = false
             }
