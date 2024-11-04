@@ -175,7 +175,7 @@ const toggleAudio = (clickedButton) => {
 startGameButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
     mainGameLoop.style.display = 'block'
-    bodyElement.style.backgroundImage = "url('src/background-img-project.jpg')"
+    bodyElement.style.backgroundImage = "url('src/background-img-folder/background-img-project.jpg')"
     console.log('hello')
     });
 
