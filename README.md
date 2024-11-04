@@ -11,7 +11,6 @@
 ###    JS:
 ### - 'audio.play()'
 ### - 'audio.pause()'
-###
 ###    CSS:
 ### -  'text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;'
 ### -  'box-shadow: 0 5px #70615f ;'
