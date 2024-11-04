@@ -176,30 +176,22 @@ body {
     background-color: #f14b59;
 }
 
-
-
 /* cookie grid/main grid container ================================================================================ */
 
 .grid-container{
     display: inline-grid;
     width: 20%;
     height: 300px;
-    /* grid-template-columns: 200px 200px 200px; */
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 350px;
+    margin-top: 268px;
     margin-left: 800px;
     background-image: url('/src/cookie-image/cookie-img.png');
-
-
-
 }
 
 .grid-items {
     margin: 0;
     /* border: 1px solid black; */
-    font: 1em;
- 
-
+    font: 1em; 
 }
 
 #quadrant-1 {
@@ -209,7 +201,6 @@ body {
     font-size: 1.5em;
     background-size: cover;
 }
-
 
 #quadrant-2 {
     display: flex;
@@ -321,52 +312,6 @@ body {
     background-size: cover;
 }
 
-/* divs to block 'on-click' functonality  ================================================================================ */
-
-#negate-click-quadrant-1 {
-    display: none;
-    /* opacity: 0; */
-    position: absolute;
-    width: 187px;
-    height: 147px;
-    /* background-color: white; */
-    left: 810px;
-    top: 360px;
-}
-
-#negate-click-quadrant-2 {
-    display: none;
-    /* opacity: 0; */
-    position: absolute;
-    width: 187px;
-    height: 147px;
-    /* background-color: red; */
-    left: 1000px;
-    top: 360px;
-}
-
-#negate-click-quadrant-3 {
-    display: none;
-    /* opacity: 0; */
-    position: absolute;
-    width: 187px;
-    height: 147px;
-    /* background-color: blue; */
-    left: 810px;
-    bottom: 278px;
-}
-
-#negate-click-quadrant-4 {
-    display: none;
-    /* opacity: 0; */
-    position: absolute;
-    width: 187px;
-    height: 147px;
-    /* background-color: green; */
-    left: 1000px;
-    bottom: 278px;
-}
-
 /* media queries  ================================================================================ */
 
 @media (max-width: 768px) {
@@ -377,6 +322,19 @@ body {
         background-repeat: no-repeat;
     }
 
+    .grid-container{
+        display: inline-grid;
+        width: 20%;
+        height: 300px;
+        /* grid-template-columns: 200px 200px 200px; */
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 268px;
+        margin-left: 800px;
+        background-image: url('/src/start-menu-imgs/background-image-project-smaller-viewport.jpg');
+    }
+    
+    
+    
     main {
         width: 100vw;             
         max-width: 100%;           
