@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="./app.js"></script>
+    <!-- <script defer src="https://www.youtube.com/iframe_api"></script> -->
     <link rel="stylesheet" href='css/style.css'>
 </head>
 <body>
+    <div class="snow-wrap">
+        <div class="snow"></div>
+    </div>
     <main>
-        <section>
+        <section id="game-loop">
             <div class="score-board">
                 <div id="score-board-title"><h1>Keep Track!</h1></div>
                 <div class="total-clicks-container"> 
@@ -18,20 +22,40 @@
                 </div> 
                 <div  class="total-cookies-container">
                     <div id="total-cookies-text"><h1>Cookies Eaten:</h1></div>
-                    <div id="total-cookies-count">2a</div>
-                </div>  
+                    <div id="total-cookies-count"></div>
+                </div>
+                <div id="gif-container">1</div>   
             </div>
-            <div class="grid-container">
-                <div class="grid-items" id="quadrant-1">1</div>
-                <div class="grid-items" id="quadrant-2">2</div>
-                <div class="grid-items" id="quadrant-3">3</div>
-                <div class="grid-items" id="quadrant-4">4</div>
-
-                <!-- <div class="grid-items">5</div>
-                <div class="grid-items">6</div> -->
+            <div class="game-container">
+                <div class="grid-container">
+                    <div class="grid-items" id="quadrant-1"></div>
+                    <div class="grid-items" id="quadrant-2"></div>
+                    <div class="grid-items" id="quadrant-3"></div>
+                    <div class="grid-items" id="quadrant-4"></div>
+                </div> 
+                <div class="divs-to-block-clicks">
+                    <div class='grid-blockers' id="negate-click-quadrant-1"></div>
+                    <div class='grid-blockers' id="negate-click-quadrant-2"></div>
+                    <div class='grid-blockers' id="negate-click-quadrant-3"></div>
+                    <div class='grid-blockers' id="negate-click-quadrant-4"></div>
+                </div>
             </div>
         </section> 
-        <section>
+        <section class="game-menu">
+            <div class="menu-buttons">
+                <div id="game-title"><h1>Cookie Clicker Chronicles</h1></div>
+                <button class="buttons" id="start-button">Start Game</button>
+                <button class="buttons" id="how-to-play-button">How to Play</button>
+                <button class="buttons" id="set-timer">Set Timer</button>
+                <button class="buttons" id="quit-game">Quit</button>
+                <div class="audio-control">
+                    <button class="buttons" id="audio-on-button">Audio ON</button> 
+                    <button class="buttons" id="audio-off-button">Audio OFF</button>    
+                </div>
+            </div>
+        </section>
+        <section class="sounds-and-effects">
+            <!-- <div id="jingle-bell-song"></div> -->
         </section>
     </main>     
 </body>
