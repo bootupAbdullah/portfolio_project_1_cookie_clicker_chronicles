@@ -1,6 +1,5 @@
 # <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> Cookie Clicker Chronicles
-
-###  by Abdullah Durrani
+##  by Abdullah Durrani
 
 <br />
 
@@ -17,8 +16,7 @@
 ### -  'transform: translateY(3px);'
 ### With CSS in particular, I learned how to create clickable button effects, which I initially struggled to remember. Additionally, I heavily relied on ChatGPT to overcome challenges with media queries, benefiting greatly from the ability to interact and clarify concepts through discussion.
 
-## Other than this, as far as I am aware, I wrote every line of code in this game.
-
+### ** To the best of my knowledge, all other code in this project is original and was written specifically for it.
 <br />
 
 ## <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> Synopsis: 
