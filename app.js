@@ -174,8 +174,9 @@ const toggleAudio = (clickedButton) => {
 
 startGameButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
-    // bodyElement.style.backgroundImage = "url('src/start-menu-imgs/background-img-project.jpg')" I was having issues with rednering this image trough github pages so I removed the functionlaity and instead added the image straight through CSS.
     mainGameLoop.style.display = 'block'
+    bodyElement.style.backgroundImage = "url('src/start-menu-imgs/background-img-project.jpg')"
+    console.log('hello')
     });
 
 // These event listener expression were learned much later on in the project: 
