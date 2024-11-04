@@ -128,14 +128,14 @@ body {
     width: 20%;
     height: 300px;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 268px;
+    margin-top: 226px;
     margin-left: 800px;
     background-image: url('/src/cookie-image/cookie-img.png');
 }
 
 .grid-items {
     margin: 0;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     font: 1em; 
 }
 

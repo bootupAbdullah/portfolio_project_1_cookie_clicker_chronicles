@@ -153,11 +153,10 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
             restoreCookieImage(quadrant1, quadrant2, quadrant3, quadrant4)
             setTimeout(()=>{
                 gridContainer.style.display = "inline-grid"; 
-            }, "150");
+            }, 500);
         }
     })
 })
-
 
 const toggleAudio = (clickedButton) => {
     if(clickedButton === audioOnButton) {
@@ -178,7 +177,6 @@ startGameButton.addEventListener('click', (event) => {
     bodyElement.style.backgroundImage = "url('/src/start-menu-imgs/background-img-project.jpg')"
     mainGameLoop.style.display = 'block'
     });
-
 
 // These event listener expression were learned much later on in the project: 
 audioOnButton.addEventListener('click', () => toggleAudio(audioOnButton));
