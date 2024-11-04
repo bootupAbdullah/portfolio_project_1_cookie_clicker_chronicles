@@ -14,7 +14,7 @@ body {
 
 #game-loop{
     display: none;
-    background-image: url('src/start-menu-imgs/background-img-project.jpg');
+    background-image: url('src/background-img-project.jpg');
 }
 
 /* game menu ================================================================================ */

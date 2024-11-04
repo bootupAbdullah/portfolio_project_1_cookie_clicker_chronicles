@@ -1,6 +1,8 @@
 # <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> Cookie Clicker Chronicles
 ##  by Abdullah Durrani
 
+#### *** I had to move a few images out of their respective folders into the main src folder because githhub pages had isses rendering the images.
+
 <br />
 
 ## <img src= './src/readme-img/readme-img.png' width='150px' height='100px' style='margin-right: 15px'/> Acknowledgments
