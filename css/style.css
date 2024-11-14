@@ -172,11 +172,12 @@ body {
     border: 1px solid black;
     box-shadow: 5px 5px 5px black ;
     border-radius: 5%;
-    transition: background-position 0.5s ease;
+    transition: background-image 0.1s ease;
 }
 
 #first-page-button:hover {
     cursor: pointer;
+    background-image: linear-gradient(to right, white, gray);
   }
 
 
