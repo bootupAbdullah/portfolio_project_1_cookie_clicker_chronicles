@@ -5,7 +5,8 @@
   }
 
 body {
-    background-image: url('../src/start-menu-imgs/start-menu-background.jpg');
+    /* background-image: url('../src/start-menu-imgs/start-menu-background.jpg'); <------ background with character and window only ------> */
+    background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
@@ -20,7 +21,7 @@ body {
 /* game menu ================================================================================ */
 
 .game-menu {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: end;
     height: 600px;
@@ -124,9 +125,63 @@ body {
 
 /* how-to-play-menu ================================================================================ */
 .how-to-play-menu {
-    display: none;
-   
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    /* border: 3px solid yellow; */
 }
+
+.how-to-play-menu-div-1 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    padding-left: 10px;
+    /* border: 3px solid black; */
+    width:315px;
+}
+
+#img-div-1 {
+    /* border: 3px solid white; */
+    display: flex;
+    flex-direction: column;
+}
+
+#img-paragraph-1 {
+    font-family: "Mountains of Christmas", serif;
+    font-size: 1.3em;
+    color: white;
+    padding-left: 10px;
+    background-color: hsla(91, 100%, 20%, 0.5);
+}
+
+#span-text-1 {
+    font-weight: 800;
+    color: red;
+}
+
+#span-text-2 {
+    font-weight: 800;
+    color: yellow;
+}
+
+#first-page-button {
+    width: 90px;
+    height: 35px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px black ;
+    border-radius: 5%;
+    transition: background-position 0.5s ease;
+}
+
+#first-page-button:hover {
+    cursor: pointer;
+  }
+
+
+
+
 
 
 /* cookie grid/main grid container ================================================================================ */
