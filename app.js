@@ -12,6 +12,7 @@ const cookieQuadrant4 = document.querySelector('#quadrant-4');
 const gifContainer1 = document.querySelector('#gif-container');
 const gameMenuDisplay = document.querySelector('.game-menu');
 const startGameButton = document.querySelector('#start-button');
+const howToPlayButton = document.querySelector('#how-to-play-button');
 const mainGameLoop = document.querySelector('#game-loop');
 const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
 const audioOnButton = document.querySelector('#audio-on-button');
@@ -176,8 +177,18 @@ startGameButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
     mainGameLoop.style.display = 'block'
     bodyElement.style.backgroundImage = "url('src/background-img-folder/background-img-project.jpg')"
-    console.log('hello')
+    // console.log('hello')
     });
+
+// clickable event for the 'how to play' button, listens for 'click', chages background for body,
+//changes display for .game-menu
+
+howToPlayButton.addEventListener('click', (event) => {
+    gameMenuDisplay.style.display = 'none'
+    bodyElement.style.backgroundImage = "url(/src/how-to-play-menu-image/how-to-play-image.jpg)"
+})
+
+
 
 // These event listener expression were learned much later on in the project: 
 audioOnButton.addEventListener('click', () => toggleAudio(audioOnButton));
