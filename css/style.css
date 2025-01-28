@@ -5,8 +5,8 @@
   }
 
 body {
-    /* background-image: url('../src/start-menu-imgs/start-menu-background.jpg'); <------ background with character and window only ------> */
-    background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg');
+    background-image: url('../src/start-menu-imgs/start-menu-background.jpg');
+    /* background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
@@ -18,10 +18,10 @@ body {
     background-image: url('src/background-img-project.jpg');
 }
 
-/* game menu ================================================================================ */
+/* game menu ================================================================ */
 
 .game-menu {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: end;
     height: 600px;
@@ -44,7 +44,7 @@ body {
     pointer-events: none;
 }
 
-/* start-game menu buttons ================================================================================ */
+/* start-game menu buttons ========================================================================== */
 
 .menu-buttons {
     width: 600px;
@@ -124,13 +124,14 @@ body {
 }
 
 /* how-to-play-menu ================================================================================ */
-.how-to-play-menu {
+
+/* .how-to-play-menu {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    /* border: 3px solid yellow; */
+    border: 3px solid yellow;
 }
 
 .how-to-play-menu-div-1 {
@@ -138,12 +139,12 @@ body {
     flex-direction: column;
     padding-top: 150px;
     padding-left: 10px;
-    /* border: 3px solid black; */
+    border: 3px solid black;
     width:315px;
 }
 
 #img-div-1 {
-    /* border: 3px solid white; */
+    border: 3px solid white;
     display: flex;
     flex-direction: column;
 }
@@ -178,11 +179,7 @@ body {
 #first-page-button:hover {
     cursor: pointer;
     background-image: linear-gradient(to right, white, gray);
-  }
-
-
-
-
+  } */
 
 
 /* cookie grid/main grid container ================================================================================ */
