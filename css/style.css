@@ -2,24 +2,21 @@
 
 * {
     box-sizing: border-box;
-  }
+}
 
 body {
     background-image: url('../src/start-menu-imgs/start-menu-background.jpg');
-    /* background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
-#game-loop{
-    display: none;
-    background-image: url('src/background-img-project.jpg');
-}
+
 
 /* game menu ================================================================ */
-
 .game-menu {
     display: flex;
     justify-content: center;
@@ -27,8 +24,6 @@ body {
     height: 600px;
     margin-top: 40px;
     margin-right: 50px;
-    /* margin-left: 660px;
-    margin-top: 300px; */
 }
 
 #game-title {
@@ -45,7 +40,6 @@ body {
 }
 
 /* start-game menu buttons ========================================================================== */
-
 .menu-buttons {
     width: 600px;
     margin-top: 10px;
@@ -67,14 +61,13 @@ body {
 }
 
 .buttons:active {
-  box-shadow: 0 5px #70615f ;
-  transform: translateY(3px);
+    box-shadow: 0 5px #70615f;
+    transform: translateY(3px);
 }
 
 #start-button {
     color: white;
     background-color: #f14b59;
-
 }
 
 #how-to-play-button {
@@ -85,7 +78,6 @@ body {
 #set-timer {
     color: white;
     background-color: #F5624D;
-
 }
 
 #quit-game {
@@ -94,13 +86,11 @@ body {
 }
 
 /* audio buttons ================================================================================ */
-
 .audio-control {
-    display:flex;
+    display: flex;
     justify-content: space-around;
     align-items: flex-end;
     width: 200px;
-
 }
 
 #audio-on-button {
@@ -110,8 +100,6 @@ body {
     color: white;
     border: 3px solid gold;
     background-color:#5a8b6a;
-
-
 }
 
 #audio-off-button {
@@ -123,149 +111,90 @@ body {
     background-color: #f14b59;
 }
 
-/* how-to-play-menu ================================================================================ */
+/* ========================================================================
+  GAME SCREEN
+  ======================================================================== */
 
-/* .how-to-play-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    border: 3px solid yellow;
+/* !=========================================================================
+    ! SECTION 1: GAME PAGE CONATINER, MAIN "DIV"
+   !======================================================================== */
+
+/* --------------------------------------------------------------------------
+  MAIN GAME CONTAINER - CONTAINER EFFECTED BY THE DOM, RENDERING GAME CONSOLE
+  -------------------------------------------------------------------------- */
+.game-loop {
+   display: none;
+   flex-direction: column;
+   justify-content: baseline;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   border: 5px solid blue;
 }
 
-.how-to-play-menu-div-1 {
-    display: flex;
-    flex-direction: column;
-    padding-top: 150px;
-    padding-left: 10px;
-    border: 3px solid black;
-    width:315px;
+/* --------------------------------------------------------------------------
+  GAME WRAPPER CONTAINER - Responsive layout management
+  
+  Additional flex container created specifically for responsive layout.
+  The main game section cannot use display:flex because JavaScript 
+  toggles its display property (none/block) to switch between menu and 
+  game states. This wrapper enables proper flex positioning without 
+  interfering with DOM-based state management.
+  
+  Contains: Scoreboard + Cookie game container
+  -------------------------------------------------------------------------- */
+.container-for-game-loop {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 25px;
+   height: 80%;
+   width: 50%;
+   border: 2px solid pink;
 }
 
-#img-div-1 {
-    border: 3px solid white;
-    display: flex;
-    flex-direction: column;
-}
+/* !=========================================================================
+    ! SECTION 2 : SCOREBOARD CONTAINER, TOTAL CLICKS TEXT, COOKIES EATEN TEXT
+   !======================================================================== */
 
-#img-paragraph-1 {
-    font-family: "Mountains of Christmas", serif;
-    font-size: 1.3em;
-    color: white;
-    padding-left: 10px;
-    background-color: hsla(91, 100%, 20%, 0.5);
-}
-
-#span-text-1 {
-    font-weight: 800;
-    color: red;
-}
-
-#span-text-2 {
-    font-weight: 800;
-    color: yellow;
-}
-
-#first-page-button {
-    width: 90px;
-    height: 35px;
-    border: 1px solid black;
-    box-shadow: 5px 5px 5px black ;
-    border-radius: 5%;
-    transition: background-image 0.1s ease;
-}
-
-#first-page-button:hover {
-    cursor: pointer;
-    background-image: linear-gradient(to right, white, gray);
-  } */
-
-
-/* cookie grid/main grid container ================================================================================ */
-
-.grid-container{
-    display: inline-grid;
-    width: 20%;
-    height: 300px;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 226px;
-    margin-left: 800px;
-    background-image: url('../src/cookie-image/cookie-img.png');
-}
-
-.grid-items {
-    margin: 0;
-    /* border: 1px solid black; */
-    font: 1em; 
-}
-
-#quadrant-1 {
-    padding-left:5px;
-    font-size: 1.5em;
-    background-size: cover;
-}
-
-#quadrant-2 {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    font-size: 1.5em;
-
-}
-
-#quadrant-3 {
-    padding-left:5px;
-    font-size: 1.5em;
-}
-
-#quadrant-4  {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-    font-size: 1.5em;
-}
-
-/* scoreboard  ================================================================================ */
-
-/* I am attempting to make the base shape of my counter */
+/* --------------------------------------------------------------------------
+  SCOREBOARD CONTAINER, NOTE: HEIGHT & WIDTH DO NOT EFFECT ACTUAL IMAGE
+  -------------------------------------------------------------------------- */
 
 .score-board {
     background-image: url('../src/score-board/score-board-img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid gold;
     height: 300px;
-    width: 300px;
-    position: absolute;
-    top: 200px;
-    left: 1300px;
+    width: 600px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     font-family: "Mountains of Christmas", serif;
-    /* margin-left: 300px;
-    margin-bottom: 400px; */
 }
-
 
 #score-board-title {
-    margin-top: 40px;
-    margin-left: 60px;
     font-size: 1.5em;
     color: brown;
+    border: 3px solid yellow;
 }
 
-/*total clicks container and children divs  ================================================================================ */
-
+/* --------------------------------------------------------------------------
+   'TOTAL CLICKS' TEXT AND COUNT CONTAINER
+   -------------------------------------------------------------------------- */
 .total-clicks-container {
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     height: 40px;
+    border: 3px solid white;
 }
 
+
 #total-clicks-text {
-    /* padding-top: 30px; */
-    /* padding-left: 20px; */
     font-size: 1.5em;
     color: black;
-    margin-left: 20px;
-    padding-left: 10px;
+
 }
 
 #total-clicks-count {
@@ -273,16 +202,18 @@ body {
     width: 50px;
     height: 60px;
     font-size: 3em;
-    margin-right: 30px;
-    padding-left: 5px;
-    color:white 
+    color: white;
+    border: 2px solid red;
+
 }
 
-/*total cookies container and children ================================================================================ */
+/* --------------------------------------------------------------------------
+   'COOKIES EATEN' TEXT AND COUNT CONTAINERS
+   -------------------------------------------------------------------------- */
 
 .total-cookies-container {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     margin-top: 20px;
 }
 
@@ -299,11 +230,91 @@ body {
     font-size: 3em;
     margin-right: 30px;
     padding-left: 10px;
-    color:white 
+    color: white;
 }
 
-/* gif container  ================================================================================ */
+/* !=========================================================================
+    ! SECTION 3: COOKIE GAME CONSOLE, COOKIE IMAGE AND QAUDRANT LAYERS  
+   !======================================================================== */
 
+
+/* --------------------------------------------------------------------------
+   GAME CONSOLE
+   -------------------------------------------------------------------------- */
+
+.game-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 400px;
+   height: 300px;
+   border: 4px solid yellow;
+}
+
+/* --------------------------------------------------------------------------
+   COOKIE IMAGE CONTAINER
+   -------------------------------------------------------------------------- */
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 300px;
+  border: 2.5px solid black;
+  background-image: url('../src/cookie-image/cookie-img.png');
+  background-size: cover;
+}
+
+/* --------------------------------------------------------------------------
+   COOKIE IMAGE CONTAINER
+   -------------------------------------------------------------------------- */
+
+
+.grid-items {
+   width: 50%;
+   height: 50%;
+   margin: 0;
+   font: 1em;
+   border: 2px solid white; /* Added for visibility */
+}
+
+/* --------------------------------------------------------------------------
+   COOKIE IMAGE QUADRANTS
+   -------------------------------------------------------------------------- */
+
+
+#quadrant-1 {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   font-size: 1.5em;
+
+}
+
+#quadrant-2 {
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-start;
+   font-size: 1.5em;
+}
+
+#quadrant-3 {
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-end;
+   font-size: 1.5em;
+}
+
+#quadrant-4 {
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   font-size: 1.5em;
+}
+
+
+
+/* gif container ================================================================================ */
 #gif-container {
     display: none;
     background-color: white;
@@ -311,13 +322,13 @@ body {
     height: 150px;
     position: absolute;
     bottom: 150px;
-    left: 280px;
+    left: 50%;
+    transform: translateX(-50%);
     background-image: url('https://media1.tenor.com/m/IY0FiSVJRKIAAAAd/seriously-disbelief.gif');
     background-size: cover;
 }
 
-/* media queries  ================================================================================ */
-
+/* MOBILE MEDIA QUERIES ================================================================================ */
 @media (max-width: 768px) {
     body {
         background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
@@ -326,18 +337,56 @@ body {
         background-repeat: no-repeat;
     }
 
-    .grid-container{
-        display: inline-grid;
-        width: 20%;
-        height: 300px;
-        /* grid-template-columns: 200px 200px 200px; */
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 268px;
-        margin-left: 800px;
-        background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg');
+    /* Game Layout Mobile */
+    .game-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        gap: 15px;
+        height: auto;
+    }
+
+    .grid-container {
+        width: 280px;
+        height: 280px;
+        order: 2;
     }
     
-    
+    .score-board {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 240px;
+        height: 180px;
+        order: 1;
+    }
+
+    #score-board-title {
+        margin-top: 20px;
+        margin-left: 35px;
+        font-size: 1.1em;
+    }
+
+    #total-clicks-text, #total-cookies-text {
+        font-size: 0.9em;
+        margin-left: 8px;
+    }
+
+    #total-clicks-count, #total-cookies-count {
+        width: 40px;
+        height: 45px;
+        font-size: 1.8em;
+        margin-right: 18px;
+    }
+
+    #gif-container {
+        width: 100px;
+        height: 100px;
+        bottom: 100px;
+    }
+
+    /* Menu Mobile */
     main {
         width: 100vw;             
         max-width: 100%;           
@@ -347,19 +396,14 @@ body {
         align-items: center;       
     }
 
-    section {
-        width: 100px;
-        height: 200px;
-    }
-
     .game-menu {
         margin-left: 0px;
-        margin-top: 0x;
+        margin-top: 0px;
+        margin-right: 0;
     }
  
     .menu-buttons {
         width: 100%;               
-        /* max-width: 300px;*/
         margin: 20px auto;        
         display: flex;
         flex-direction: column;   
@@ -372,31 +416,61 @@ body {
         font-family: "Mountains of Christmas", serif;
         text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
         margin-bottom: 30px;
+        left: 0;
+        top: 0;
+        transform: none;
     }
 
     .buttons {
-        width: 140%;              
-        margin-left: 30px;           
-        font-size: 1.5em;
+        width: 180px;              
+        margin-left: 0;           
+        font-size: 1.2em;
         border: 3px solid gold;            
     }
     
-    #audio-on-button, #audio-off-button{
+    #audio-on-button, #audio-off-button {
         border: 3px solid gold;
-        
+        width: 80px;
+        height: 50px;
+        font-size: 0.9em;
     }
 
+    .audio-control {
+        width: 180px;
+    }
 }
 
-@media (min-width: 1024px) and (max-width: 1100px) {
+/* TABLET MEDIA QUERIES ================================================================================ */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .game-container {
+        padding: 30px;
+    }
 
+    .grid-container {
+        width: 280px;
+        height: 280px;
+    }
     
+    .score-board {
+        top: 30px;
+        right: 30px;
+        width: 280px;
+        height: 280px;
+    }
+
+    #gif-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* LARGE SCREEN MEDIA QUERIES ================================================================================ */
+@media (min-width: 1024px) and (max-width: 1100px) {
     body {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
-    
     
     .game-menu {
         margin-right: 300px;
@@ -413,7 +487,6 @@ body {
         display: flex;
         flex-direction: column;   
         margin-left: 50px;
-           
     }
 
     .buttons {        
@@ -428,12 +501,10 @@ body {
         width: 400px;
     }
     
-    
-    #audio-on-button{
+    #audio-on-button {
         height: 100px;
         width: 100px;
         font-size: 2em;
-    
     }
     
     #audio-off-button {
@@ -442,5 +513,3 @@ body {
         font-size: 2em;
     }
 }
-
-

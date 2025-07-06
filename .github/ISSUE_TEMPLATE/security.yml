@@ -1,0 +1,35 @@
+name: 🔒 Security
+description: Report a security vulnerability (see our Security Policy for critical issues)
+title: '[SECURITY] '
+labels:
+  - security
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **⚠️ Important:** For critical/high severity vulnerabilities, please email akddev.co@gmail.com instead of creating a public issue. See our [Security Policy](../SECURITY.md) for details.
+  - type: textarea
+    id: vulnerability-description
+    attributes:
+      label: Vulnerability Description
+      description: Describe the security issue you've found
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can this vulnerability be reproduced?
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact
+      description: What could happen if this vulnerability is exploited?
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information or suggestions

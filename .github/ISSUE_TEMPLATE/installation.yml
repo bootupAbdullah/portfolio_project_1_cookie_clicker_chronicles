@@ -1,0 +1,36 @@
+name: 📦 Installation Issue
+description: Get help with installation, setup, or configuration problems
+title: "[INSTALL] "
+labels: ["installation", "setup"]
+body:
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: Installation Method
+      description: How are you trying to install?
+      options:
+        - pip install
+        - Docker
+        - From source
+        - Package manager
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, etc.
+      placeholder: e.g., Ubuntu 22.04, Python 3.9, Docker 24.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What's going wrong?
+      placeholder: Describe the installation issue...
+    validations:
+      required: true

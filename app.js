@@ -13,7 +13,7 @@ const gifContainer1 = document.querySelector('#gif-container');
 const gameMenuDisplay = document.querySelector('.game-menu');
 const startGameButton = document.querySelector('#start-button');
 const howToPlayButton = document.querySelector('#how-to-play-button');
-const mainGameLoop = document.querySelector('#game-loop');
+const mainGameLoop = document.querySelector('.game-loop');
 const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
 const audioOnButton = document.querySelector('#audio-on-button');
 const audioOffButton = document.querySelector('#audio-off-button');
@@ -171,11 +171,11 @@ const toggleAudio = (clickedButton) => {
 // event listeners ==========================================================================================
 
 // clickable event for the 'start game' button, listens for 'click' changes background for body, 
-//changes display for #game-loop and .game-menu
+//changes display for .game-loop and .game-menu
 
 startGameButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
-    mainGameLoop.style.display = 'block'
+    mainGameLoop.style.display = 'flex'
     bodyElement.style.backgroundImage = "url('src/background-img-folder/background-img-project.jpg')"
     // console.log('hello')
     });
