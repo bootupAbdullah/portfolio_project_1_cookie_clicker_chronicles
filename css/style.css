@@ -134,7 +134,7 @@ body {
    align-items: center;
    width: 100vw;
    height: 100vh;
-   border: 5px solid blue;
+   /* border: 5px solid blue; */
 }
 
 /* --------------------------------------------------------------------------
