@@ -153,7 +153,7 @@ cookieQuadrantList.forEach((cookieQuadrant) => {
             quadrant1 = true, quadrant2 = true, quadrant3 = true, quadrant4 = true
             restoreCookieImage(quadrant1, quadrant2, quadrant3, quadrant4)
             setTimeout(()=>{
-                gridContainer.style.display = "inline-grid"; 
+                gridContainer.style.display = "flex"; 
             }, 300);
         }
     })

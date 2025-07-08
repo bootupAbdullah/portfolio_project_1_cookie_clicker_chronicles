@@ -12,35 +12,40 @@
     <main>
         <section class="game-loop">
             <div class="container-for-game-loop">
-            <div class="score-board">
-                <div id="score-board-title"><h1>Keep Track!</h1></div>
-                <!-- 'TOTAL CLICKS' DISPLAY -->
-                 <div class="total-clicks-display">
-                    <div id="total-clicks-text"><h1>Total Clicks:</h1></div>
-                    <div id="total-clicks-count"></div>
+                <div class="scoreboard-wrapper">
+                    <div class="scoreboard">
+                        <div id="scoreboard-title"><h1>Keep Track!</h1></div>
+                        <!-- 'TOTAL CLICKS' DISPLAY -->
+                        <div class="total-clicks-display">
+                            <div id="total-clicks-text"><h1>Total Clicks:</h1></div>
+                            <div id="total-clicks-count"></div>
+                        </div>
+                        <!-- 'COOKIES EATEN' DISPLAY -->
+                        <div class="cookies-eaten-display">
+                            <div id="cookies-eaten-text"><h1>Cookies Eaten:</h1></div>
+                            <div class="scoreboard-categories-count">
+                        </div>
+                            <div id="cookies-eaten-count"></div>
+                        </div>
+                        <div id="gif-container">1</div>   
+                    </div>
                 </div>
-                <!-- 'COOKIES EATEN' DISPLAY -->
-                <div class="cookies-eaten-display">
-                    <div id="cookies-eaten-text"><h1>Cookies Eaten:</h1></div>
-                    <div class="scoreboard-categories-count">
+                <div class="game-wrapper"> 
+                    <div class="game-container">
+                        <div class="grid-container">
+                            <div class="grid-items" id="quadrant-1">1</div>
+                            <div class="grid-items" id="quadrant-2">2</div>
+                            <div class="grid-items" id="quadrant-3">3</div>
+                            <div class="grid-items" id="quadrant-4">4</div>
+                        </div> 
+                        <!-- <div class="divs-to-block-clicks">
+                            <div class='grid-blockers' id="negate-click-quadrant-1"></div>
+                            <div class='grid-blockers' id="negate-click-quadrant-2"></div>
+                            <div class='grid-blockers' id="negate-click-quadrant-3"></div>
+                            <div class='grid-blockers' id="negate-click-quadrant-4"></div>
+                        </div> -->
+                    </div>
                 </div>
-                    <div id="cookies-eaten-count"></div>
-                </div>
-                <div id="gif-container">1</div>   
-            </div>
-            <div class="game-container">
-                <div class="grid-container">
-                    <div class="grid-items" id="quadrant-1">1</div>
-                    <div class="grid-items" id="quadrant-2">2</div>
-                    <div class="grid-items" id="quadrant-3">3</div>
-                    <div class="grid-items" id="quadrant-4">4</div>
-                </div> 
-                <!-- <div class="divs-to-block-clicks">
-                    <div class='grid-blockers' id="negate-click-quadrant-1"></div>
-                    <div class='grid-blockers' id="negate-click-quadrant-2"></div>
-                    <div class='grid-blockers' id="negate-click-quadrant-3"></div>
-                    <div class='grid-blockers' id="negate-click-quadrant-4"></div>
-                </div> -->
             </div>
         </section> 
         <section class="game-menu">
