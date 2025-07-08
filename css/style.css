@@ -15,8 +15,9 @@ body {
 }
 
 
-
-/* game menu ================================================================ */
+/* ========================================================================
+  GAME MENU/LANDING PAGE
+  ======================================================================== */
 .game-menu {
     display: flex;
     justify-content: center;
@@ -39,7 +40,9 @@ body {
     pointer-events: none;
 }
 
-/* start-game menu buttons ========================================================================== */
+/* ========================================================================
+  GAME SCREEN BUTTONS
+  ======================================================================== */
 .menu-buttons {
     width: 600px;
     margin-top: 10px;
@@ -85,7 +88,9 @@ body {
     background-color: #235E6F;
 }
 
-/* audio buttons ================================================================================ */
+/* ========================================================================
+  AUDIO BUTTONS
+  ======================================================================== */
 .audio-control {
     display: flex;
     justify-content: space-around;
@@ -116,7 +121,7 @@ body {
   ======================================================================== */
 
 /* !=========================================================================
-    ! SECTION 1: GAME PAGE CONATINER, MAIN "DIV"
+    ! SECTION 1: GAME PAGE CONATINER, MAIN CONTAINER FOR GAMEPLAY
    !======================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -150,7 +155,8 @@ body {
    padding: 25px;
    height: 80%;
    width: 50%;
-   border: 2px solid pink;
+   margin-top: 30px;
+   /* border: 2px solid pink; */
 }
 
 /* !=========================================================================
@@ -163,38 +169,46 @@ body {
 
 .score-board {
     background-image: url('../src/score-board/score-board-img.png');
-    background-size: contain;
+    background-size:cover;
     background-repeat: no-repeat;
-    border: 2px solid gold;
-    height: 300px;
-    width: 600px;
+    display: flex; 
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
     margin-top: 25px;
     margin-bottom: 25px;
     font-family: "Mountains of Christmas", serif;
+    /* border: 2px solid gold; */
 }
 
 #score-board-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     font-size: 1.5em;
     color: brown;
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
 }
 
 /* --------------------------------------------------------------------------
-   'TOTAL CLICKS' TEXT AND COUNT CONTAINER
+   TOTAL CLICKS TEXT & COUNT
    -------------------------------------------------------------------------- */
-.total-clicks-container {
+
+.total-clicks-display {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    height: 40px;
-    border: 3px solid white;
+    width: 90%;
+    /* border: 5px solid blue; */
 }
 
-
 #total-clicks-text {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: black;
-
+    width: 60%;
+    padding-left: 3px;
+    /* border: 3px solid white; */
 }
 
 #total-clicks-count {
@@ -203,34 +217,40 @@ body {
     height: 60px;
     font-size: 3em;
     color: white;
-    border: 2px solid red;
+    border: 2px solid black;
 
 }
 
 /* --------------------------------------------------------------------------
-   'COOKIES EATEN' TEXT AND COUNT CONTAINERS
+   COOKIES EATEN TEXT AND COUNT
    -------------------------------------------------------------------------- */
 
-.total-cookies-container {
+
+.cookies-eaten-display {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    /* border: 5px solid blue; */
 }
 
-#total-cookies-text {
+
+#cookies-eaten-text {
     font-size: 1.3em;
     color: black;
-    margin-left: 20px;
+    padding-left: 20px;
+    /* border: 3px solid white; */
 }
 
-#total-cookies-count {
+#cookies-eaten-count {
     background-color: #34A65F;
     width: 50px;
     height: 60px;
     font-size: 3em;
-    margin-right: 30px;
-    padding-left: 10px;
+    margin-right: 15px;
     color: white;
+    border: 2px solid black;
 }
 
 /* !=========================================================================
@@ -368,12 +388,12 @@ body {
         font-size: 1.1em;
     }
 
-    #total-clicks-text, #total-cookies-text {
+    #total-clicks-text, #cookies-eaten-text {
         font-size: 0.9em;
         margin-left: 8px;
     }
 
-    #total-clicks-count, #total-cookies-count {
+    #total-clicks-count, #cookies-eaten-container-count {
         width: 40px;
         height: 45px;
         font-size: 1.8em;
