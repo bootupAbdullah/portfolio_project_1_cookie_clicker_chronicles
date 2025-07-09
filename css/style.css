@@ -134,7 +134,7 @@ body {
    align-items: center;
    width: 100vw;
    height: 100vh;
-   border: 5px solid blue;
+   /* border: 5px solid blue; */
 }
 
 /* --------------------------------------------------------------------------
@@ -154,7 +154,7 @@ body {
    align-items: center;
    flex-wrap: wrap;
    padding: 25px;
-   height: 80%;
+   height: 90%;
    width: 50%;
    margin-top: 30px;
    /* border: 2px solid pink; */
@@ -297,7 +297,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 47%;
+    width: 45%;
     justify-content: flex-end;
     /* border: 3px solid red; */
 
@@ -307,6 +307,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+   flex-wrap: wrap;
    width: 400px;
    height: 300px;
    margin-left: 30px;
@@ -393,6 +394,8 @@ body {
     background-image: url('https://media1.tenor.com/m/IY0FiSVJRKIAAAAd/seriously-disbelief.gif');
     background-size: cover;
 }
+
+
 
 /* ========================================================================
    MEDIA QUERIES - MENU/LANDING PAGE RESPONSIVENESS ONLY
@@ -537,20 +540,19 @@ body {
         align-items: flex-start;
         gap: 20px;
         height: 50vh;
-        border: 2px solid white;
+        /* border: 2px solid white; */
     }
 
     #game-title {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         font-size: 2.5em;
     }
    
     .menu-buttons {
         width: 500px;
         gap: 20px;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
     }
-
 
     .buttons {        
         height: 60px;
@@ -607,4 +609,37 @@ body {
         width: 100px;
         font-size: 2em;
     }
+} 
+
+
+/* --------------------------------------------------------------------------
+  VERY SPECIFIC - iPhone 14 Pro Max (915x1792) only
+  This viewport was causing layout issues outside of standard media queries
+  and needed targeted adjustment to prevent affecting other breakpoints
+  -------------------------------------------------------------------------- */
+@media (min-width: 910px) and (max-width: 920px) {
+   #game-title {
+       font-size: 2.8em;
+       margin-bottom: 40px;
+   }
+
+   .menu-buttons {
+       gap: 25px;
+   }
+
+   .buttons {
+       height: 65px;
+       width: 280px;
+       font-size: 2em;
+   }
+
+   #audio-on-button, #audio-off-button {
+       height: 75px;
+       width: 75px;
+       font-size: 1.3em;
+   }
+
+   .audio-control {
+       width: 280px;
+   }
 }
