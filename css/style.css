@@ -35,7 +35,11 @@ body {
     transform: rotate(-15deg);
     font-size: 3em;
     font-family: "Mountains of Christmas", serif;
-    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    text-shadow: 
+        0 0 15px #FFD700, 
+        0 0 30px #FFD700, 
+        0 0 45px #FFD700,
+        0 0 60px #FF6B35;
     margin-bottom: 10px;
     pointer-events: none;
 }
@@ -61,6 +65,12 @@ body {
     font-family: "Mountains of Christmas", serif;
     font-size: 1.5em;
     margin-bottom: 15px;
+    transition: all 0.2s ease; 
+}
+
+.buttons:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px gold, 0 8px 15px rgba(0,0,0,0.3);
 }
 
 .buttons:active {
