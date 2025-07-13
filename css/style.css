@@ -126,7 +126,7 @@ body {
 }
 
 /* ========================================================================
-  GAME SCREEN
+  ! GAME SCREEN
   ======================================================================== */
 
 /* !=========================================================================
@@ -216,11 +216,6 @@ body {
    WRAPPER: TOTAL CLICKS TEXT, COUNT & COOKIES EATEN TEXT, COUNT
    -------------------------------------------------------------------------- */
 
-
-
-
-
-
 /* --------------------------------------------------------------------------
    TOTAL CLICKS TEXT & COUNT
    -------------------------------------------------------------------------- */
@@ -256,6 +251,7 @@ body {
     border: 2px solid black;
 
 }
+
 
 /* --------------------------------------------------------------------------
    COOKIES EATEN TEXT AND COUNT
@@ -359,7 +355,7 @@ body {
    align-items: flex-start;
    font-size: 2em;
    background-position: center;
-    background-size: cover; /* or contain, depending on your images */
+    background-size: cover; 
    /* border: 1px solid black; */
    /* background-color: red; */
 
@@ -369,6 +365,8 @@ body {
    display: flex;
    justify-content: flex-end;
    align-items: flex-start;
+   background-position: center;
+   background-size: cover; 
    font-size: 2em;
 }
 
@@ -378,13 +376,15 @@ body {
    align-items: flex-end;
    font-size: 2em;
    background-position: center;
-   background-size: cover; /* or contain, depending on your images */
+   background-size: cover; 
 }
 
 #quadrant-4 {
    display: flex;
    justify-content: flex-end;
    align-items: flex-end;
+   background-position: center;
+   background-size: cover;
    font-size: 2em;
 }
 
@@ -407,7 +407,7 @@ body {
 
 
 /* ========================================================================
-   MEDIA QUERIES - MENU/LANDING PAGE RESPONSIVENESS ONLY
+    ! [MENU/LANDING PAGE] MEDIA QUERIES
    ======================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -652,3 +652,257 @@ body {
        width: 280px;
    }
 }
+
+
+/* ========================================================================
+  ! [GAME SCREEN] MEDIA QUERIES 
+  ======================================================================== */
+
+/* --------------------------------------------------------------------------
+  SMALL MOBILE - [GAME SCREEN] 
+  -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+   
+   .game-loop {
+        height: auto;
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+
+    .container-for-game-loop {
+       flex-direction: column;
+       padding: 10px;
+       width: 95%;
+       height: auto;
+       margin-top: 10px;
+       gap: 15px;
+       overflow-x: hidden;
+       /* border: 1px solid yellow; */
+   }
+
+   .scoreboard-wrapper {
+       width: 100%;
+       order: 1;
+       /* border: 1px solid white; */
+   }
+
+   .scoreboard {
+       width: 280px;
+       height: 200px;
+       background-size: contain;
+       margin: 10px auto;
+       /* border: 1px solid yellow; */
+
+   }
+
+   #scoreboard-title {
+       font-size: 0.8em;
+       justify-content: center;
+       width: 70%;
+       height: 25%;
+       /* border: 2px solid white; */
+   }
+
+   .total-clicks-display {
+       width: 70%;
+       height: 25%;
+       margin-top: 5px;
+       justify-content: center;
+       /* border: 2px solid blue; */
+   }
+
+   #total-clicks-text {
+       font-size: 0.8em;
+       width: 50%;
+       /* border: 2px solid yellow; */
+   }
+
+   #total-clicks-count {
+       width: 30px;
+       height: 45px;
+       font-size: 2em;
+       padding-left: 8px;
+       margin: 5px 0px 7px 10px;
+       /* margin-bottom: 7px;
+       margin-left: 10px;
+       margin-top: 5px; */
+       /* border: 1px solid white; */
+   }
+
+   .cookies-eaten-display {
+       width: 70%;
+       height: 25%;
+       justify-content: center;
+       align-items: center;
+       /* border: 2px solid yellow; */
+   }
+
+   #cookies-eaten-text {
+       font-size: .8em;
+       width: 60%;
+       margin-right: 10px;
+       margin-bottom: 10px;
+       /* border: 2px solid yellow; */
+   }
+
+   #cookies-eaten-count {
+        width: 30px;
+        height: 45px;
+        font-size: 2em;
+        padding-left: 8px;
+        margin-bottom: 3px;
+        margin-right: 18px;
+        /* border: 1px solid yellow; */
+   }
+
+   .game-wrapper {
+       width: 100%;
+       justify-content: center;
+       order: 2;
+   }
+
+    .grid-container {
+        width: 300px; 
+        height: 250px;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+  ! TABLETS [GAME SCREEN]
+  -------------------------------------------------------------------------- */
+@media (min-width: 800px) and (max-width: 1024px){
+  .game-loop {
+      height: 90vh;
+      margin-top: 40px;
+      /* border: 1px solid yellow; */
+  }
+
+  .container-for-game-loop {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      width: 100%;
+      height: 80%;
+      margin-top: 15px;
+      gap: 20px;
+      /* border: 3px solid white; */
+  }
+
+  .scoreboard-wrapper {
+    
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 90%;
+    /* border: 1px solid blue; */
+}
+
+  .scoreboard {
+      width: 450px;
+      height: 350px;
+      background-size: contain;
+      margin: 15px auto;
+      /* border: 1px solid yellow; */
+  }
+
+  #scoreboard-title {
+      font-size: 2em;
+      justify-content: center;
+      width: 70%;
+      height: 25%;
+  }
+
+  .total-clicks-display {
+      width: 75%;
+      height: 25%;
+      margin-top: 8px;
+      justify-content: center;
+      /* border: 1px solid white; */
+  }
+
+  #total-clicks-text {
+      font-size: 1.5em;
+      width: 55%;
+  }
+
+  #total-clicks-count {
+      width: 60px;
+      height: 60px;
+      font-size: 2.5em;
+      padding-left: 10px;
+      margin: 0px 0px 15px 20px;
+  }
+
+  .cookies-eaten-display {
+      width: 75%;
+      height: 41%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      /* border: 1px solid white; */
+  }
+
+  #cookies-eaten-text {
+      font-size: 1.5em;
+      width: 60%;
+      height: 100%;
+      /* border: solid 1px yellow; */
+  }
+
+  #cookies-eaten-count {
+      width: 60px;
+      height: 60px;
+      font-size: 2.5em;
+      padding-left: 10px;
+      margin: 0px 0px 5px 15px;
+  }
+
+  .game-wrapper {
+      width: 50%;
+      height: 40%;
+      justify-content: center;
+      align-items: center;
+      /* border: 5px solid blue */
+  }
+
+  .game-container {
+      width: 100%;
+      height: 100%;
+   /* border: 1px solid yellow */
+  }
+
+  .grid-container {
+      width: 100%;
+      height: 100%;
+   /* border: 3px solid yellow; */
+  }
+}
+
+/* TWO VIEWPORTS NEEDED A SEPERATE QUERY TO IMPROVE THE GAME WRAPPER VISUAL QUALITY */
+
+
+/* VIEWPORT 800 X 1236 */
+@media (min-width: 800px) and (max-width: 801px) {
+    .game-wrapper {
+      width: 60%;
+      height: 40%;
+      justify-content: center;
+      align-items: center;
+      /* border: 5px solid blue */
+  }
+}
+
+/* VIEWPORT 915 x 1792 */
+@media (min-width: 915px) and (max-width: 916px) {
+
+  .game-wrapper {
+    width: 80%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid blue */
+}
+
+}
+
+
