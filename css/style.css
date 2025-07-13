@@ -125,6 +125,56 @@ body {
     background-color: #f14b59;
 }
 
+
+
+/* ========================================================================
+  ! HOW TO PLAY MENU - working on making it visible when butotn clicked
+  ======================================================================== */
+
+.how-to-play-menu {
+    display: none
+}
+
+
+  .how-to-play-content h1 {
+    color: #8B4513;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.instructions {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #333;
+    text-align: left;
+}
+
+.instructions p {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.instructions ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: rgba(255, 215, 0, 0.2);
+    border-radius: 5px;
+    border-left: 4px solid gold;
+}
+
+#back-to-menu {
+    margin-top: 20px;
+    background-color: #5a8b6a;
+    color: white;
+}
+
+
 /* ========================================================================
   ! GAME SCREEN
   ======================================================================== */

@@ -13,14 +13,12 @@ const gifContainer1 = document.querySelector('#gif-container');
 const gameMenuDisplay = document.querySelector('.game-menu');
 const startGameButton = document.querySelector('#start-button');
 const howToPlayButton = document.querySelector('#how-to-play-button');
+const howToPlayMenu = document.querySelector('.how-to-play-menu');
+const backToMenuButton = document.querySelector('#back-to-menu');
 const mainGameLoop = document.querySelector('.game-loop');
 const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
 const audioOnButton = document.querySelector('#audio-on-button');
 const audioOffButton = document.querySelector('#audio-off-button');
-// const negateClickQuadrant1Div = document.querySelector('#negate-click-quadrant-1');
-// const negateClickQuadrant2Div = document.querySelector('#negate-click-quadrant-2');
-// const negateClickQuadrant3Div = document.querySelector('#negate-click-quadrant-3')
-// const negateClickQuadrant4Div = document.querySelector('#negate-click-quadrant-4')
 
 // these 'quadrant' variables are created globaly in an effort to track engagement with clickable event
 let quadrant1 = true
@@ -40,13 +38,11 @@ console.dir(totalCookiesCount)
 console.dir(gifContainer1)
 console.dir(gameMenuDisplay)
 console.dir(startGameButton)
+console.dir(howToPlayMenu)
+console.dir(backToMenuButton)
 console.dir(holidayCheer)
 console.dir(audioOnButton)
 console.dir(audioOffButton)
-// console.dir(negateClickQuadrant1Div)
-// console.dir(negateClickQuadrant2Div)
-// console.dir(negateClickQuadrant3Div)
-// console.dir(negateClickQuadrant4Div)
 
 // List ==============================================================================================
 const updateTotalClickTextList = ["Way to Go!", "Woah!", "Wow", "Nice", "Keep Going!"]
@@ -62,7 +58,6 @@ gridContainerItems.forEach((containerItem) => {
         updateClickText(totalClicksText, totalClicks) //added function to update text! para:(text-you-want-to-update, click-count)
         }
     });
-    // totalClicks += 1
 });
 
 //works to add additonal functionality, does not impede base functionality of clickable event
@@ -107,14 +102,8 @@ const restoreCookieImage = (boolean1, boolean2, boolean3, boolean4) => {
         cookieQuadrant3.style.pointerEvents = "auto";
         cookieQuadrant4.style.backgroundImage = "none";
         cookieQuadrant4.style.pointerEvents = "auto";
-        // negateClickQuadrant1Div.style.display = "none";
-        // negateClickQuadrant2Div.style.display = "none";
-        // negateClickQuadrant3Div.style.display = "none";
-        // negateClickQuadrant4Div.style.display = "none";
     }
 }
-
-//check to see if clicked event is grid container
 
 // adding functionality if quadrant clicked, quadrant then dissappears
 cookieQuadrantList.forEach((cookieQuadrant) => {
@@ -172,25 +161,30 @@ const toggleAudio = (clickedButton) => {
 
 // clickable event for the 'start game' button, listens for 'click' changes background for body, 
 //changes display for .game-loop and .game-menu
-
 startGameButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
+    howToPlayMenu.style.display = 'none'
     mainGameLoop.style.display = 'flex'
     bodyElement.style.backgroundImage = "url('src/background-img-folder/background-img-project.jpg')"
-    // console.log('hello')
-    });
+});
 
-// clickable event for the 'how to play' button, listens for 'click', chages background for body,
-//changes display for .game-menu
-
+// clickable event for the 'how to play' button
 howToPlayButton.addEventListener('click', (event) => {
     gameMenuDisplay.style.display = 'none'
+    mainGameLoop.style.display = 'none'
+    howToPlayMenu.style.display = 'flex'
     bodyElement.style.backgroundImage = "url(/src/how-to-play-menu-image/how-to-play-image.jpg)"
 })
 
+// clickable event for the 'back to menu' button
+backToMenuButton.addEventListener('click', (event) => {
+    howToPlayMenu.style.display = 'none'
+    mainGameLoop.style.display = 'none'
+    gameMenuDisplay.style.display = 'flex'
+    bodyElement.style.backgroundImage = "url('src/start-menu-imgs/start-menu-background.jpg')"
+})
 
-
-// These event listener expression were learned much later on in the project: 
+// These event listener expressions were learned much later on in the project: 
 audioOnButton.addEventListener('click', () => toggleAudio(audioOnButton));
 audioOffButton.addEventListener('click', () => toggleAudio(audioOffButton));
 
