@@ -34,11 +34,12 @@
                 <div class="game-wrapper"> 
                     <div class="game-container">
                         <div class="grid-container">
-                            <div class="grid-items" id="quadrant-1"></div>
-                            <div class="grid-items" id="quadrant-2"></div>
-                            <div class="grid-items" id="quadrant-3"></div>
-                            <div class="grid-items" id="quadrant-4"></div>
+                            <div class="grid-items" id="quadrant-1">1</div>
+                            <div class="grid-items" id="quadrant-2">2</div>
+                            <div class="grid-items" id="quadrant-3">3</div>
+                            <div class="grid-items" id="quadrant-4">4</div>
                         </div> 
+                        <button class= "buttons" id= "game-screen-return-to-menu-button">Return to Menu</button>
                     </div>
                 </div>
             </div>
@@ -58,17 +59,26 @@
         </section>
         <section class="how-to-play-menu">
             <div class="how-to-play-content">
-                <h1>How to Play Cookie Clicker Chronicles</h1>
-                <div class="instructions">
-                    <p>Welcome to Cookie Clicker Chronicles! Here's how to play:</p>
-                    <ul>
-                        <li>Click on each quadrant of the cookie to make it disappear</li>
-                        <li>Complete all 4 quadrants to eat one whole cookie</li>
-                        <li>Track your total clicks and cookies eaten on the scoreboard</li>
-                        <li>Special messages appear as you reach click milestones!</li>
-                    </ul>
+                <div class="how-to-play-menu-title-container">
+                <h1 id="how-to-play-menu-title">How to Play Cookie Clicker Chronicles</h1>
                 </div>
+                <div class="how-to-play-image-and-button-container">
+                    <button class="buttons" id="previous-image-button">
+                        <img src="src/how-to-play-menu-image/left-arrow-1-svgrepo-com.svg" alt="previous" width="20" height="20">  
+                    </button>
+                    <div class="how-to-play-image-container">
+                        <img id="how-to-play-image-1" src="src/how-to-play-menu-image/how-to-play-image-1.png">
+                        <img id="how-to-play-image-2" src="src/how-to-play-menu-image/how-to-play-image-2.png">
+                        <img id="how-to-play-image-3" src="src/how-to-play-menu-image/how-to-play-image-3.png">
+                    </div>
+                    <button class="buttons" id="next-image-button">
+                        <img src="src/how-to-play-menu-image/right-arrow-1-svgrepo-com.svg" alt="Next" width="20" height="20">
+                    </button>
+                </div>
+                <div class="how-to-play-page-buttons">
                 <button class="buttons" id="back-to-menu">Back to Menu</button>
+                <button class="buttons" id="tutorial-start-game-button">Start Game</button>
+                </div>
             </div>
         </section>
         <section class="sounds-and-effects">
@@ -76,4 +86,5 @@
         </section>
     </main>     
 </body>
+<footer class= "footer"><button id="language-toggle" onclick="toggleLanguage()">中/EN</button></footer>
 </html>
