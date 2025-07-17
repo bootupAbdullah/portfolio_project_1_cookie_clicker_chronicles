@@ -59,7 +59,7 @@ const gameScreenReturnToMenuButton = document.querySelector('#game-screen-return
 /* ========================================================================
   AUDIO
   ======================================================================== */
-const holidayCheer = new Audio('/src/sound/jingle-bells-audio.mp3');
+const holidayCheer = new Audio('./src/sound/jingle-bells-audio.mp3');
 
 
 /* ========================================================================
