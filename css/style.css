@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('../src/start-menu-imgs/start-menu-background.jpg');
+    background-image: url('../assets/start-menu-imgs/start-menu-background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
@@ -98,17 +98,34 @@ body {
     background-color: #235E6F;
 }
 
+#language-toggle {
+    color: white;
+    background-color: #235E6F;
+    /* Will inherit other .buttons styles */
+}
+
 /* ========================================================================
-  1C. AUDIO BUTTONS
+  1C. MAIN MENU TOGGLE BUTTONS
   ======================================================================== */
-.audio-control {
+.main-menu-toggle-buttons {
+      display: flex;
+      justify-content: center;
+      width: 60px;
+  }
+
+#audio-toggle {
+    height: 60px;
+    width: 60px;
+    color: white;
+    border: 3px solid gold;
+    background-color: #5a8b6a;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    width: 200px;
+    justify-content: center;
+    align-items: center;
 }
 
-#audio-on-button {
+
+#language-toggle {
     height: 60px;
     width: 60px;
     font-size: 1em;
@@ -116,25 +133,6 @@ body {
     border: 3px solid gold;
     background-color:#5a8b6a;
 }
-
-#audio-off-button {
-    height: 60px;
-    width: 60px;
-    font-size: 1em;
-    color: white;
-    border: 3px solid gold;
-    background-color: #f14b59;
-}
-
-#language-control {
-    height: 60px;
-    width: 60px;
-    font-size: 1em;
-    color: white;
-    border: 3px solid gold;
-    background-color:#5a8b6a;
-}
-
 
 
 /* ========================================================================
@@ -143,7 +141,7 @@ body {
 
 .how-to-play-menu {
     
-    background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg');
+    background-image: url('../assets/how-to-play-menu-image/how-to-play-image.jpg');
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -332,7 +330,7 @@ body {
 }
 
 .scoreboard {
-    background-image: url('../src/score-board/score-board-img.png');
+    background-image: url('../assets/score-board/score-board-img.png');
     background-size:cover;
     background-repeat: no-repeat;
     display: flex; 
@@ -384,12 +382,11 @@ body {
     padding-left: 3px;
     /* border: 3px solid white; */
 }
-
 #total-clicks-count {
     display: flex;
     flex-wrap: wrap;
     background-color: #34A65F;
-    width: 50px;
+    width: 60px;
     height: 60px;
     font-size: 3em;
     padding-left: 15px;
@@ -427,7 +424,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: #34A65F;
-    width: 50px;
+    width: 60px;
     height: 60px;
     font-size: 3em;
     margin-right: 15px;
@@ -475,7 +472,7 @@ body {
   width: 400px;
   height: 300px;
   border: 2.5px solid black;
-  background-image: url('../src/cookie-image/cookie-img.png');
+  background-image: url('../assets/cookie-image/cookie-img.png');
   background-size: cover;
 }
 
@@ -503,7 +500,7 @@ body {
    background-position: center;
    background-size: cover; 
    /* background-color: red; */
-   border: 1px solid black;
+   /* border: 1px solid black; */
    font-size: 2em;
 
 }
@@ -514,7 +511,7 @@ body {
    align-items: flex-start;
    background-position: center;
    background-size: cover; 
-   border: 1px solid black;
+   /* border: 1px solid black; */
    font-size: 2em;
 }
 
@@ -524,7 +521,7 @@ body {
    align-items: flex-end;
    background-position: center;
    background-size: cover; 
-   border: 1px solid black;
+   /* border: 1px solid black; */
    font-size: 2em;
 }
 
@@ -534,7 +531,7 @@ body {
    align-items: flex-end;
    background-position: center;
    background-size: cover;
-   border: 1px solid black;
+   /* border: 1px solid black; */
    font-size: 2em;
 }
 
@@ -596,7 +593,7 @@ body {
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
     body {
-        background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
+        background-image: url('../assets/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -662,7 +659,7 @@ body {
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
     body {
-        background-image: url('../src/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
+        background-image: url('../assets/start-menu-imgs/background-image-project-smaller-viewport.jpg'); 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -1095,7 +1092,7 @@ body {
    -------------------------------------------------------------------------- */
 @media (max-width: 432px) {
     .how-to-play-menu {
-        background-image: url('../src/how-to-play-menu-image/how-to-play-image.jpg');
+        background-image: url('../assets/how-to-play-menu-image/how-to-play-image.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
