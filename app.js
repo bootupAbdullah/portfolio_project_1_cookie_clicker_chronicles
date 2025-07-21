@@ -115,40 +115,40 @@
     * Updates all visible text elements safely with null checks
     */
    const toggleLanguage = () => {
-    // Switch language state
-    currentLanguage = currentLanguage === 'english' ? 'chinese' : 'english';
-    
-    // Update main menu elements (always exist)
-    const gameTitle = document.querySelector('#game-title h1');
-    const startButton = document.querySelector('#start-button');
-    const howToPlayButton = document.querySelector('#how-to-play-button');
-    const setTimerButton = document.querySelector('#set-timer');
-    const quitButton = document.querySelector('#quit-game');
-    
-    if (gameTitle) gameTitle.innerText = languages[currentLanguage].gameTitle;
-    if (startButton) startButton.innerText = languages[currentLanguage].startGame;
-    if (howToPlayButton) howToPlayButton.innerText = languages[currentLanguage].howToPlay;
-    if (setTimerButton) setTimerButton.innerText = languages[currentLanguage].setTimer;
-    if (quitButton) quitButton.innerText = languages[currentLanguage].quit;
-    
-    // Toggle between English and Chinese total clicks elements
-    const totalClicksTextEng = document.querySelector('#total-clicks-text');
-    const totalClicksTextChi = document.querySelector('#total-clicks-text-chinese');
+   // Switch language state
+   currentLanguage = currentLanguage === 'english' ? 'chinese' : 'english';
+   
+   // Update main menu elements (always exist)
+   const gameTitle = document.querySelector('#game-title h1');
+   const startButton = document.querySelector('#start-button');
+   const howToPlayButton = document.querySelector('#how-to-play-button');
+   const setTimerButton = document.querySelector('#set-timer');
+   const quitButton = document.querySelector('#quit-game');
+   
+   if (gameTitle) gameTitle.innerText = languages[currentLanguage].gameTitle;
+   if (startButton) startButton.innerText = languages[currentLanguage].startGame;
+   if (howToPlayButton) howToPlayButton.innerText = languages[currentLanguage].howToPlay;
+   if (setTimerButton) setTimerButton.innerText = languages[currentLanguage].setTimer;
+   if (quitButton) quitButton.innerText = languages[currentLanguage].quit;
+   
+   // Toggle between English and Chinese total clicks elements
+   const totalClicksTextEng = document.querySelector('#total-clicks-text');
+   const totalClicksTextChi = document.querySelector('#total-clicks-text-chinese');
 
-    if (currentLanguage === 'chinese') {
-        if (totalClicksTextEng) totalClicksTextEng.style.display = 'none';
-        if (totalClicksTextChi) totalClicksTextChi.style.display = 'flex';
-    } else {
-        if (totalClicksTextEng) totalClicksTextEng.style.display = 'flex';
-        if (totalClicksTextChi) totalClicksTextChi.style.display = 'none';
-    }
-    
-    // Update other game screen elements
-    const cookiesEatenText = document.querySelector('#cookies-eaten-text h1');
-    const backToMenuButton = document.querySelector('#back-to-menu');
-    
-    if (cookiesEatenText) cookiesEatenText.innerText = languages[currentLanguage].cookiesEaten;
-    if (backToMenuButton) backToMenuButton.innerText = languages[currentLanguage].backToMenu;
+   if (currentLanguage === 'chinese') {
+       if (totalClicksTextEng) totalClicksTextEng.style.display = 'none';
+       if (totalClicksTextChi) totalClicksTextChi.style.display = 'flex';
+   } else {
+       if (totalClicksTextEng) totalClicksTextEng.style.display = 'flex';
+       if (totalClicksTextChi) totalClicksTextChi.style.display = 'none';
+   }
+   
+   // Update other game screen elements
+   const cookiesEatenText = document.querySelector('#cookies-eaten-text h1');
+   const backToMenuButton = document.querySelector('#back-to-menu');
+   
+   if (cookiesEatenText) cookiesEatenText.innerText = languages[currentLanguage].cookiesEaten;
+   if (backToMenuButton) backToMenuButton.innerText = languages[currentLanguage].backToMenu;
 }
 
 /* =========================================================================
@@ -166,7 +166,7 @@
            if (quadrant1 === true || quadrant2 === true || quadrant3 === true || quadrant4 === true) {
                totalClicks += 1
                totalCLicksCount.innerText = totalClicks
-               updateClickText(totalClicksText, totalClicks)
+               updateClickText(totalClicksTextEng, totalClicks)
            }
        });
    });
@@ -308,15 +308,22 @@
        totalCLicksCount.innerText = totalClicks
        totalCookiesCount.innerText = totalCookiesEatenCounter
 
-         // Reset click text AND styling
-        totalClicksText.innerText = languages[currentLanguage].totalClicks
-        totalClicksText.style.fontSize = '2.0em'        
-        totalClicksText.style.paddingRight = ''    
-    
-       
-       // Reset click text to default
-       totalClicksText.innerText = languages[currentLanguage].totalClicks
-       
+        // Update BOTH elements and reset styling
+        const engH1 = totalClicksTextEng.querySelector('h1');
+        const chiH1 = totalClicksTextChi.querySelector('h1');
+
+        if (engH1) {
+            engH1.innerText = languages['english'].totalClicks;
+            engH1.style.fontSize = '';        
+            engH1.style.paddingRight = '';    
+        }
+
+        if (chiH1) {
+            chiH1.innerText = languages['chinese'].totalClicks;
+            chiH1.style.fontSize = '';        
+            chiH1.style.paddingRight = '';    
+        }
+        
        // Set appropriate background for viewport size
        if (window.innerWidth <= 480) {
            bodyElement.style.backgroundImage = "url('assets/start-menu-imgs/background-image-project-smaller-viewport.jpg')"
