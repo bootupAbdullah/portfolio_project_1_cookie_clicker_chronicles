@@ -5,9 +5,3 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "weekly"
-
-  # Monitor backend (.NET/C#) dependencies
-  - package-ecosystem: "nuget"
-    directory: "/backend/ApplicationTracker"
-    schedule:
-      interval: "weekly"
