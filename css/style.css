@@ -147,6 +147,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
     /* border: 1px solid blue; */
 }
 
@@ -1137,7 +1143,7 @@ body {
     .how-to-play-page-buttons {
         width: 100%;
         align-items: baseline;
-        border: 1px solid yellow;
+        /* border: 1px solid yellow; */
     }
 
     #back-to-menu {

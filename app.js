@@ -46,7 +46,7 @@
    const cookieQuadrant4 = document.querySelector('#quadrant-4');
    
    /* ---- 🔊 AUDIO ELEMENTS ---- */
-   const holidayCheer = new Audio('./src/sound/jingle-bells-audio.mp3');
+   const holidayCheer = new Audio('./assets/sound/jingle-bells-audio.mp3');
 
 /* =========================================================================
    🎯 GAME STATE VARIABLES - Track game progress and UI state
@@ -124,12 +124,17 @@
    const howToPlayButton = document.querySelector('#how-to-play-button');
    const setTimerButton = document.querySelector('#set-timer');
    const quitButton = document.querySelector('#quit-game');
+   const gameScreenReturnButton = document.querySelector('#game-screen-return-to-menu-button');
+   const turorialStartGameButon = document.querySelector('#tutorial-start-game-button')
+
    
    if (gameTitle) gameTitle.innerText = languages[currentLanguage].gameTitle;
    if (startButton) startButton.innerText = languages[currentLanguage].startGame;
    if (howToPlayButton) howToPlayButton.innerText = languages[currentLanguage].howToPlay;
    if (setTimerButton) setTimerButton.innerText = languages[currentLanguage].setTimer;
    if (quitButton) quitButton.innerText = languages[currentLanguage].quit;
+   if (gameScreenReturnButton) gameScreenReturnButton.innerText = languages[currentLanguage].backToMenu;
+   if (turorialStartGameButon) turorialStartGameButon.innerText = languages[currentLanguage].startGame
    
    // Toggle between English and Chinese total clicks elements
    const totalClicksTextEng = document.querySelector('#total-clicks-text');
@@ -323,7 +328,7 @@
             chiH1.style.fontSize = '';        
             chiH1.style.paddingRight = '';    
         }
-        
+
        // Set appropriate background for viewport size
        if (window.innerWidth <= 480) {
            bodyElement.style.backgroundImage = "url('assets/start-menu-imgs/background-image-project-smaller-viewport.jpg')"
@@ -356,11 +361,11 @@
        
        if (holidayCheer.paused) {
            holidayCheer.play();
-           audioIcon.src = 'src/sound-svg/sound-on-svgrepo-com.svg';
+           audioIcon.src = 'assets/sound-svg/sound-on-svgrepo-com.svg';
        } else {
            holidayCheer.pause();
            holidayCheer.currentTime = 0;
-           audioIcon.src = 'src/sound-svg/sound-off-svgrepo-com.svg';
+           audioIcon.src = 'assets/sound-svg/sound-off-svgrepo-com.svg';
        }
    }
 
