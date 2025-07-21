@@ -18,6 +18,7 @@
                         <!-- 'TOTAL CLICKS' DISPLAY -->
                         <div class="total-clicks-display">
                             <div id="total-clicks-text"><h1>Total Clicks:</h1></div>
+                            <div id="total-clicks-text-chinese" style="display: none;"><h1>总点击数:</h1></div>
                             <div id="total-clicks-count"></div>
                         </div>
                         <!-- 'COOKIES EATEN' DISPLAY -->
@@ -34,10 +35,10 @@
                 <div class="game-wrapper"> 
                     <div class="game-container">
                         <div class="grid-container">
-                            <div class="grid-items" id="quadrant-1">1</div>
-                            <div class="grid-items" id="quadrant-2">2</div>
-                            <div class="grid-items" id="quadrant-3">3</div>
-                            <div class="grid-items" id="quadrant-4">4</div>
+                            <div class="grid-items" id="quadrant-1"></div>
+                            <div class="grid-items" id="quadrant-2"></div>
+                            <div class="grid-items" id="quadrant-3"></div>
+                            <div class="grid-items" id="quadrant-4"></div>
                         </div> 
                         <button class= "buttons" id= "game-screen-return-to-menu-button">Return to Menu</button>
                     </div>
@@ -51,9 +52,11 @@
                 <button class="buttons" id="how-to-play-button">How to Play</button>
                 <button class="buttons" id="set-timer">Set Timer</button>
                 <button class="buttons" id="quit-game">Quit</button>
-                <div class="audio-control">
-                    <button class="buttons" id="audio-on-button">Audio ON</button> 
-                    <button class="buttons" id="audio-off-button">Audio OFF</button>    
+                <div class="main-menu-toggle-buttons">
+                    <button class="buttons" id="audio-toggle">
+                        <img id="audio-icon" src="assets/sound-svg/sound-on-svgrepo-com.svg" alt="Audio" width="40" height="30">
+                    </button> 
+                    <button class="buttons" id="language-toggle" onclick="toggleLanguage()">中/EN</button>    
                 </div>
             </div>
         </section>
@@ -64,15 +67,15 @@
                 </div>
                 <div class="how-to-play-image-and-button-container">
                     <button class="buttons" id="previous-image-button">
-                        <img src="src/how-to-play-menu-image/left-arrow-1-svgrepo-com.svg" alt="previous" width="20" height="20">  
+                        <img src="assets/how-to-play-menu-image/left-arrow-1-svgrepo-com.svg" alt="previous" width="20" height="20">  
                     </button>
                     <div class="how-to-play-image-container">
-                        <img id="how-to-play-image-1" src="src/how-to-play-menu-image/how-to-play-image-1.png">
-                        <img id="how-to-play-image-2" src="src/how-to-play-menu-image/how-to-play-image-2.png">
-                        <img id="how-to-play-image-3" src="src/how-to-play-menu-image/how-to-play-image-3.png">
+                        <img id="how-to-play-image-1" src="assets/how-to-play-menu-image/how-to-play-image-1.png">
+                        <img id="how-to-play-image-2" src="assets/how-to-play-menu-image/how-to-play-image-2.png">
+                        <img id="how-to-play-image-3" src="assets/how-to-play-menu-image/how-to-play-image-3.png">
                     </div>
                     <button class="buttons" id="next-image-button">
-                        <img src="src/how-to-play-menu-image/right-arrow-1-svgrepo-com.svg" alt="Next" width="20" height="20">
+                        <img src="assets/how-to-play-menu-image/right-arrow-1-svgrepo-com.svg" alt="Next" width="20" height="20">
                     </button>
                 </div>
                 <div class="how-to-play-page-buttons">
@@ -86,5 +89,4 @@
         </section>
     </main>     
 </body>
-<footer class= "footer"><button id="language-toggle" onclick="toggleLanguage()">中/EN</button></footer>
 </html>
